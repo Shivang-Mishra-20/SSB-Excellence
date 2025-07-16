@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | SSB Excellence - Premier SSB Coaching Institute</title>
+    <meta name="description" content="Learn about SSB Excellence - India's premier SSB coaching institute founded by ex-defense officers with decades of experience in SSB interviews.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4a7729; /* Military green */
+            --primary-dark: #3a5f20;
+            --secondary: #d4af37; /* Gold */
+            --accent: #8b0000; /* Dark red */
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --success: #28a745;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            overflow-x: hidden;
+            background-color: #fff;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(74, 119, 41, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+            border: 2px solid var(--secondary);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-secondary:hover {
+            background: #c19d30;
+            border-color: #c19d30;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-secondary:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, var(--secondary), #e8c252);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .btn-secondary:hover:before {
+            opacity: 1;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.4s ease;
+        }
+
+        .header.scrolled {
+            padding: 10px 0;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            transition: all 0.4s ease;
+        }
+
+        .header.scrolled .logo img {
+            height: 40px;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar .nav-links li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .navbar .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover:after,
+        .navbar .nav-links a.active:after {
+            width: 100%;
+        }
+
+        .navbar .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .navbar .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        /* Page Banner */
+        .page-banner {
+            height: 400px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('IMA_POP_June_4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-banner:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+        }
+
+        .page-banner .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-banner h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .breadcrumb li {
+            margin: 0 10px;
+            position: relative;
+        }
+
+        .breadcrumb li:after {
+            content: '/';
+            position: absolute;
+            right: -15px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .breadcrumb li:last-child:after {
+            display: none;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            color: white;
+        }
+
+        .breadcrumb .current {
+            color: white;
+            font-weight: 600;
+        }
+
+        /* About Section */
+        .about-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section .container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--primary);
+            height: 450px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .about-section h2 span {
+            color: var(--secondary);
+        }
+
+        .about-section p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            margin: 30px 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            background: rgba(74, 119, 41, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 14px 28px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.08);
+            background: white;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(74, 119, 41, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            transition: all 0.4s ease;
+        }
+
+        .feature-item:hover .feature-icon {
+            background: var(--primary);
+            transform: scale(1.1) rotate(15deg);
+            box-shadow: 0 5px 15px rgba(74, 119, 41, 0.3);
+        }
+
+        .feature-item:hover .feature-icon i {
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .feature-icon i {
+            color: var(--primary);
+            font-size: 1.5rem;
+            transition: all 0.4s ease;
+        }
+
+        .feature-text h4 {
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+            color: var(--primary);
+        }
+
+        /* Mission Vision */
+        .mission-vision {
+            background: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-vision:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/concrete-wall.png');
+            opacity: 0.03;
+            z-index: 0;
+        }
+
+        .mv-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .mv-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .mv-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .mv-card i {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            transition: all 0.4s ease;
+            display: inline-block;
+        }
+
+        .mv-card:hover i {
+            transform: scale(1.2) rotate(10deg);
+            color: var(--secondary);
+        }
+
+        .mv-card:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--secondary);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease;
+        }
+
+        .mv-card:hover:after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .mv-card h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        /* Team Section */
+        .team {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-img {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .member-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .team-member:hover .member-img img {
+            transform: scale(1.1);
+        }
+
+        .member-info {
+            padding: 25px 20px;
+        }
+
+        .member-info h3 {
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .member-info p {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .member-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .member-social a {
+            width: 35px;
+            height: 35px;
+            background: rgba(74, 119, 41, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            transition: all 0.3s;
+        }
+
+        .member-social a:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Call to Action */
+        .btn-outline-white {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    transition: all 0.4s ease;
+}
+
+.btn-outline-white:hover {
+    background: white;
+    color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+}
+
+        .cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+        }
+
+        .cta .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 20px;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-links a:before {
+            content: '\f054';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            margin-right: 8px;
+            font-size: 0.7rem;
+            color: var(--secondary);
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-contact i {
+            margin-right: 15px;
+            color: var(--secondary);
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .page-banner h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            section {
+                padding: 80px 0;
+            }
+
+            .about-section .container {
+                flex-direction: column;
+            }
+
+            .about-image {
+                margin-top: 40px;
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .page-banner {
+                height: 350px;
+                background-attachment: scroll;
+            }
+
+            .page-banner h1 {
+                font-size: 2rem;
+            }
+
+            .navbar .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+
+            .navbar .nav-links.active {
+                display: flex;
+            }
+
+            .navbar .nav-links li {
+                margin: 0;
+                text-align: center;
+                padding: 15px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .cta .btn-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta .btn {
+                width: 100%;
+                max-width: 250px;
+                margin: 5px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 60px 0;
+            }
+
+            .page-banner {
+                height: 300px;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .mv-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="https://via.placeholder.com/150x50?text=SSB+Excellence" alt="SSB Excellence Logo">
+            </div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="success-stories.html">Success Stories</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>About SSB Excellence</h1>
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li class="current">About Us</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2>Our <span>Story</span></h2>
+                <p>Founded in 2010 by a group of retired defense officers and SSB experts, SSB Excellence was born out of a shared passion for mentoring young aspirants to achieve their dreams of serving the nation. Our founders, with their combined experience of over 100 years in the armed forces, recognized the need for specialized training that goes beyond traditional coaching.</p>
+                <p>What began as a small training center in Allahabad has now grown into one of India's most respected SSB coaching institutes, with a pan-India presence and a reputation for excellence in defense services preparation.</p>
+                
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Our Mission</h4>
+                            <p>To transform defense aspirants into future leaders by developing their officer-like qualities and preparing them to excel in the SSB interview process.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Our Vision</h4>
+                            <p>To be the premier SSB coaching institute in India, recognized for our innovative training methodologies and exceptional success rates.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1580130732478-4e339fb33746?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="SSB Excellence Team">
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Vision Section -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Core Values</h2>
+                <p>These fundamental beliefs guide our approach to training and define our institutional culture.</p>
+            </div>
+            
+            <div class="mv-container">
+                <div class="mv-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Integrity</h3>
+                    <p>We uphold the highest standards of honesty and ethical conduct in all our interactions, mirroring the values expected of defense officers.</p>
+                </div>
+                <div class="mv-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Leadership</h3>
+                    <p>We cultivate leadership qualities in our students, preparing them to take command and make critical decisions under pressure.</p>
+                </div>
+                <div class="mv-card">
+                    <i class="fas fa-medal"></i>
+                    <h3>Excellence</h3>
+                    <p>We strive for excellence in everything we do, setting high standards for ourselves and our students.</p>
+                </div>
+                <div class="mv-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Commitment</h3>
+                    <p>We are deeply committed to our students' success, providing unwavering support throughout their SSB journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Expert Team</h2>
+                <p>Our faculty comprises retired defense officers and psychologists with decades of SSB assessment experience.</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Col. Rajesh Verma">
+                    </div>
+                    <div class="member-info">
+                        <h3>Col. Rajesh Verma (Retd.)</h3>
+                        <p>Founder & Chief Mentor</p>
+                        <p>Former President, Services Selection Board with 35+ years of experience in SSB interviews</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Dr. Priya Sharma">
+                    </div>
+                    <div class="member-info">
+                        <h3>Dr. Priya Sharma</h3>
+                        <p>Chief Psychologist</p>
+                        <p>PhD in Clinical Psychology with 20+ years of experience in psychological testing</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Maj. Arun Khanna">
+                    </div>
+                    <div class="member-info">
+                        <h3>Maj. Arun Khanna (Retd.)</h3>
+                        <p>GTO Expert</p>
+                        <p>Former GTO at SSB Allahabad with 25+ years of experience in group testing</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Wg. Cdr. Neha Singh">
+                    </div>
+                    <div class="member-info">
+                        <h3>Wg. Cdr. Neha Singh (Retd.)</h3>
+                        <p>Interview Specialist</p>
+                        <p>Former Interviewing Officer with 15+ years of experience in personal interviews</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Begin Your SSB Journey?</h2>
+            <p>Join hundreds of successful candidates who have realized their dream of serving the nation with our expert guidance and proven training methodology.</p>
+            <div class="btn-container">
+    <a href="contact.html" class="btn btn-primary">Enroll Now</a>
+    <a href="tel:+917376399246" class="btn btn-outline-white">Call Us</a>
+</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col footer-about">
+                    <img src="https://via.placeholder.com/150x50?text=SSB+Excellence" alt="SSB Excellence Logo" class="footer-logo">
+                    <p>SSB Excellence is India's premier SSB coaching institute, dedicated to helping defense aspirants realize their dream of serving the nation as commissioned officers.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Our Programs</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="success-stories.html">Success Stories</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col footer-links">
+                    <h3>Our Programs</h3>
+                    <ul>
+                        <li><a href="courses.html">Screening Batch</a></li>
+                        <li><a href="courses.html">Full Psych Batch</a></li>
+                        <li><a href="courses.html">GTO Modules</a></li>
+                        <li><a href="courses.html">Personal Interview</a></li>
+                        <li><a href="courses.html">Final Preparation</a></li>
+                        <li><a href="courses.html">Online Coaching</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Defense Colony, Near SSB Center, Allahabad, UP 211001</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 73763 99246</p>
+                    <p><i class="fas fa-envelope"></i> shivang.m04@gmail.com</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 SSB Excellence. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                this.querySelector('i').classList.toggle('fa-times');
+                this.querySelector('i').classList.toggle('fa-bars');
+            });
+
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    hamburger.querySelector('i').classList.add('fa-bars');
+                    hamburger.querySelector('i').classList.remove('fa-times');
+                });
+            });
+
+            // Sticky header on scroll
+            const header = document.querySelector('.header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Back to top button
+            const backToTopBtn = document.querySelector('.back-to-top');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.add('active');
+                } else {
+                    backToTopBtn.classList.remove('active');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Add active class to current page in navigation
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinksAll = document.querySelectorAll('.navbar .nav-links a');
+            
+            navLinksAll.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (currentPage === linkPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+
+            // Animation on scroll
+            const animateElements = document.querySelectorAll('.about-content, .about-image, .mv-card, .team-member');
+            
+            function animateOnScroll() {
+                animateElements.forEach(element => {
+                    const elementPos = element.getBoundingClientRect().top;
+                    const screenPos = window.innerHeight / 1.2;
+                    
+                    if(elementPos < screenPos) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+            
+            // Set initial state
+            animateElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'all 0.6s ease';
+            });
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Run once on load
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSB Excellence | Premier SSB Coaching for Defense Aspirants</title>
+    <meta name="description" content="India's premier SSB coaching institute helping defense aspirants clear SSB interviews with expert guidance and personalized training.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4a7729; /* Military green */
+            --primary-dark: #3a5e21;
+            --secondary: #d4af37; /* Gold */
+            --accent: #8b0000; /* Dark red */
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --success: #28a745;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            overflow-x: hidden;
+            background-color: #fff;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(74, 119, 41, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(74, 119, 41, 0.3);
+        }
+
+        .btn-outline-white {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline-white:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: var(--dark);
+            border: 2px solid var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background: #c9a227;
+            border-color: #c9a227;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.4s ease;
+        }
+
+        .header.scrolled {
+            padding: 10px 0;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            transition: all 0.4s ease;
+        }
+
+        .header.scrolled .logo img {
+            height: 40px;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar .nav-links li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .navbar .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover:after,
+        .navbar .nav-links a.active:after {
+            width: 100%;
+        }
+
+        .navbar .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .navbar .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://shop.ssbcrack.com/cdn/shop/articles/IMA_POP_June_4.jpg?v=1749897347&width=1500');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 0;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: fadeInUp 1s ease 0.2s both;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease 0.4s both;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        @media (max-width: 768px) {
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Stats Counter */
+        .stats {
+            background: var(--primary);
+            color: white;
+            padding: 60px 0;
+            margin-top: -50px;
+            position: relative;
+            z-index: 2;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 1s ease;
+        }
+
+        .stat-item .count {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .stat-item p {
+            color: white;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card:hover:before {
+            opacity: 1;
+        }
+
+        .service-card:hover i,
+        .service-card:hover h3,
+        .service-card:hover p {
+            color: white;
+        }
+
+        .service-card i {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            transition: all 0.4s ease;
+        }
+
+        .service-card h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            transition: all 0.4s ease;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            transition: all 0.4s ease;
+        }
+
+        .service-card .btn {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .btn {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* About Section */
+        .about {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about .container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 5px solid var(--secondary);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .about h2 span {
+            color: var(--secondary);
+        }
+
+        .about p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            margin: 30px 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(74, 119, 41, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .feature-icon i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .feature-text h4 {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                        url('https://shop.ssbcrack.com/cdn/shop/articles/IMA_POP_June_4.jpg?v=1749897347&width=1500');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .testimonials .section-title h2,
+        .testimonials .section-title p {
+            color: white;
+        }
+
+        .testimonials .section-title h2:after {
+            background: var(--secondary);
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .testimonial-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .testimonial-content {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .testimonial-content:before,
+        .testimonial-content:after {
+            content: '"';
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.2);
+            position: absolute;
+        }
+
+        .testimonial-content:before {
+            top: -20px;
+            left: -10px;
+        }
+
+        .testimonial-content:after {
+            bottom: -40px;
+            right: -10px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            border: 3px solid var(--secondary);
+        }
+
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+            color: var(--secondary);
+        }
+
+        .author-info p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Call to Action */
+        .cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+        }
+
+        .cta-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 20px;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-links a:before {
+            content: '\f054';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            margin-right: 8px;
+            font-size: 0.7rem;
+            color: var(--secondary);
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-contact i {
+            margin-right: 15px;
+            color: var(--secondary);
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            section {
+                padding: 80px 0;
+            }
+
+            .about .container {
+                flex-direction: column;
+            }
+
+            .about-image {
+                margin-top: 40px;
+            }
+
+            .stat-item {
+                width: 50%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .navbar .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+
+            .navbar .nav-links.active {
+                display: flex;
+            }
+
+            .navbar .nav-links li {
+                margin: 0;
+                text-align: center;
+                padding: 15px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .stats {
+                padding: 40px 0;
+                margin-top: -30px;
+            }
+
+            .stat-item .count {
+                font-size: 2rem;
+            }
+
+            .service-card {
+                padding: 30px 20px;
+            }
+
+            .testimonial-item {
+                padding: 30px;
+            }
+
+            .cta-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                min-height: 600px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .stat-item {
+                width: 100%;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="https://via.placeholder.com/150x50?text=SSB+Excellence" alt="SSB Excellence Logo">
+            </div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="success-stories.html">Success Stories</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="container">
+            <h1>Your Journey to Becoming an Officer Starts Here</h1>
+            <p>SSB Excellence provides premier coaching for defense aspirants to crack the SSB interview with confidence. Our proven methodology has helped hundreds of candidates realize their dream of serving the nation.</p>
+            <div class="hero-btns">
+                <a href="contact.html" class="btn btn-primary">Enroll Now</a>
+                <a href="courses.html" class="btn btn-outline">Our Programs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Counter -->
+    <section class="stats">
+        <div class="container">
+            <div class="stat-item">
+                <div class="count" data-count="500">0</div>
+                <p>Successful Candidates</p>
+            </div>
+            <div class="stat-item">
+                <div class="count" data-count="95">0</div>
+                <p>% Screening Success Rate</p>
+            </div>
+            <div class="stat-item">
+                <div class="count" data-count="12">0</div>
+                <p>Years of Experience</p>
+            </div>
+            <div class="stat-item">
+                <div class="count" data-count="50">0</div>
+                <p>Expert Mentors</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Comprehensive Programs</h2>
+                <p>We offer specialized training programs designed to help you excel at every stage of the SSB interview process.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>Screening Batch</h3>
+                    <p>Master the art of first impressions with our intensive screening preparation covering TAT, WAT, and SD techniques.</p>
+                    <a href="courses.html" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Full Psych Batch</h3>
+                    <p>Comprehensive psychological test training including TAT, WAT, SRT with expert evaluation and feedback.</p>
+                    <a href="courses.html" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-tasks"></i>
+                    <h3>GTO Modules</h3>
+                    <p>Practical training for Group Testing Officers tasks including GD, GPE, PGT, HGT, IO, and Command Tasks.</p>
+                    <a href="courses.html" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Personal Interview</h3>
+                    <p>Master the art of personal interview with our structured approach covering all possible question patterns.</p>
+                    <a href="courses.html" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-medal"></i>
+                    <h3>Final Preparation</h3>
+                    <p>Comprehensive mock SSB interviews with detailed feedback from experienced assessors.</p>
+                    <a href="courses.html" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Online Coaching</h3>
+                    <p>Flexible online programs with live sessions, recorded lectures, and personalized feedback.</p>
+                    <a href="courses.html" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>About <span>SSB Excellence</span></h2>
+                <p>Founded by a team of ex-defense officers and SSB experts, SSB Excellence has been transforming defense aspirants into commissioned officers since 2010. Our unique methodology combines psychological insights with practical training to bring out the officer-like qualities in every candidate.</p>
+                <p>We don't just train you for the SSB - we help you develop the mindset, personality, and leadership qualities that the defense forces look for in their officers.</p>
+                
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Expert Mentors</h4>
+                            <p>Our team includes retired defense officers and psychologists with decades of SSB experience.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Proven Track Record</h4>
+                            <p>Consistently high selection rates across all defense academies - IMA, OTA, AFA, INA.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Personalized Approach</h4>
+                            <p>Individual attention with batch sizes limited to ensure quality training for all.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="about.html" class="btn btn-primary">Know More About Us</a>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1580130732478-4e339fb33746?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="SSB Excellence Team">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Success Stories</h2>
+                <p>Hear from our successful candidates who have realized their dream of joining the defense forces.</p>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        SSB Excellence transformed my approach completely. The psychological test training was particularly helpful. I cleared my SSB in the first attempt and am now a proud cadet at IMA. The personalized feedback made all the difference!
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Sharma">
+                        </div>
+                        <div class="author-info">
+                            <h4>Rahul Sharma</h4>
+                            <p>Cadet, Indian Military Academy</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        The GTO training module was exceptional. The practical exercises and detailed feedback helped me understand exactly what assessors look for. I improved dramatically in group tasks and command situations, which was crucial for my selection.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Singh">
+                        </div>
+                        <div class="author-info">
+                            <h4>Priya Singh</h4>
+                            <p>Officer Trainee, OTA Chennai</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        After two unsuccessful attempts, I joined SSB Excellence. Their approach to personality development and interview techniques was game-changing. The mock interviews were so realistic that the actual SSB felt familiar. Highly recommend!
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Arjun Patel">
+                        </div>
+                        <div class="author-info">
+                            <h4>Arjun Patel</h4>
+                            <p>Flying Officer, Indian Air Force</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="success-stories.html" class="btn btn-secondary">View More Success Stories</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Begin Your SSB Journey?</h2>
+            <p>Join hundreds of successful candidates who have realized their dream of serving the nation with our expert guidance and proven training methodology.</p>
+            <div class="cta-btns">
+                <a href="contact.html" class="btn btn-primary">Enroll Now</a>
+                <a href="tel:+917376399246" class="btn btn-outline-white">Call Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col footer-about">
+                    <img src="https://via.placeholder.com/150x50?text=SSB+Excellence" alt="SSB Excellence Logo" class="footer-logo">
+                    <p>SSB Excellence is India's premier SSB coaching institute, dedicated to helping defense aspirants realize their dream of serving the nation as commissioned officers.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Our Programs</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="success-stories.html">Success Stories</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col footer-links">
+                    <h3>Our Programs</h3>
+                    <ul>
+                        <li><a href="courses.html">Screening Batch</a></li>
+                        <li><a href="courses.html">Full Psych Batch</a></li>
+                        <li><a href="courses.html">GTO Modules</a></li>
+                        <li><a href="courses.html">Personal Interview</a></li>
+                        <li><a href="courses.html">Final Preparation</a></li>
+                        <li><a href="courses.html">Online Coaching</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Defense Colony, Near SSB Center, Allahabad, UP 211001</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 73763 99246</p>
+                    <p><i class="fas fa-envelope"></i> shivang.m04@gmail.com</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 SSB Excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                this.querySelector('i').classList.toggle('fa-times');
+                this.querySelector('i').classList.toggle('fa-bars');
+            });
+
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    hamburger.querySelector('i').classList.add('fa-bars');
+                    hamburger.querySelector('i').classList.remove('fa-times');
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Sticky header on scroll
+            const header = document.querySelector('.header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Back to top button
+            const backToTopBtn = document.querySelector('.back-to-top');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.add('active');
+                } else {
+                    backToTopBtn.classList.remove('active');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Animate stats counter
+            const statItems = document.querySelectorAll('.stat-item .count');
+            const statsSection = document.querySelector('.stats');
+            
+            function animateStats() {
+                const statsPos = statsSection.getBoundingClientRect().top;
+                const screenPos = window.innerHeight / 1.3;
+                
+                if(statsPos < screenPos) {
+                    statItems.forEach(stat => {
+                        const target = +stat.getAttribute('data-count');
+                        const count = +stat.innerText;
+                        const increment = target / 50;
+                        
+                        if(count < target) {
+                            stat.innerText = Math.ceil(count + increment);
+                            setTimeout(animateStats, 20);
+                        } else {
+                            stat.innerText = target;
+                        }
+                    });
+                }
+            }
+            
+            window.addEventListener('scroll', animateStats);
+            
+            // Add active class to current page in navigation
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinksAll = document.querySelectorAll('.navbar .nav-links a');
+            
+            navLinksAll.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (currentPage === linkPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+
+            // Animation on scroll
+            const animateElements = document.querySelectorAll('.service-card, .about-content, .about-image, .testimonial-item');
+            
+            function animateOnScroll() {
+                animateElements.forEach(element => {
+                    const elementPos = element.getBoundingClientRect().top;
+                    const screenPos = window.innerHeight / 1.2;
+                    
+                    if(elementPos < screenPos) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+            
+            // Set initial state
+            animateElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'all 0.6s ease';
+            });
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Run once on load
+
+            // Add pulse animation to CTA buttons
+            const ctaBtns = document.querySelectorAll('.cta .btn');
+            setInterval(() => {
+                ctaBtns.forEach(btn => {
+                    btn.classList.add('pulse');
+                    setTimeout(() => {
+                        btn.classList.remove('pulse');
+                    }, 1000);
+                });
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
