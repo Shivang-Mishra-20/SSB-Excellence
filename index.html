@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SSB Excellence | Premier SSB Coaching for Defense Aspirants</title>
+    <title>SSB EXCELLENCE | Premier SSB Coaching for Defense Aspirants</title>
     <meta name="description" content="India's premier SSB coaching institute helping defense aspirants clear SSB interviews with expert guidance and personalized training.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -180,12 +180,12 @@
         }
 
         .logo img {
-            height: 50px;
+            height: 80px;
             transition: all 0.4s ease;
         }
 
         .header.scrolled .logo img {
-            height: 40px;
+            height: 60px;
         }
 
         .navbar .nav-links {
@@ -319,16 +319,35 @@
         }
 
         .stats .container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
+    display: flex;
+    justify-content: space-between; /* Better spacing for 3 items */
+    flex-wrap: wrap;
+}
 
-        .stat-item {
-            text-align: center;
-            padding: 20px;
-            animation: fadeIn 1s ease;
-        }
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 1s ease;
+    width: 33.33%; /* Equal width for 3 items */
+    box-sizing: border-box;
+}
+
+/* Updated responsive behavior */
+@media (max-width: 992px) {
+    .stat-item {
+        width: 50%; /* 2 items per row */
+    }
+    
+    .stat-item:last-child {
+        width: 100%; /* Last item takes full width */
+    }
+}
+
+@media (max-width: 576px) {
+    .stat-item {
+        width: 100%; /* Stack vertically */
+    }
+}
 
         .stat-item .count {
             font-size: 3rem;
@@ -346,9 +365,23 @@
 
         /* Services Section */
         .services {
-            background: var(--light);
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             position: relative;
             overflow: hidden;
+            color: white;
+        }
+
+        .services .section-title h2,
+        .services .section-title p {
+            color: white;
+        }
+
+        .services .section-title h2:after {
+            background: var(--secondary);
         }
 
         .services-grid {
@@ -358,10 +391,10 @@
         }
 
         .service-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.9);
             padding: 40px 30px;
             border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             text-align: center;
             transition: all 0.4s ease;
             position: relative;
@@ -434,12 +467,24 @@
         .about {
             position: relative;
             overflow: hidden;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
         }
 
         .about .container {
             display: flex;
             align-items: center;
             gap: 50px;
+        }
+
+        .about h2,
+        .about h4,
+        .about p {
+            color: white;
         }
 
         .about-content {
@@ -469,7 +514,7 @@
         .about h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
-            color: var(--primary);
+            color: white;
         }
 
         .about h2 span {
@@ -495,7 +540,7 @@
         .feature-icon {
             width: 50px;
             height: 50px;
-            background: rgba(74, 119, 41, 0.1);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -505,7 +550,7 @@
         }
 
         .feature-icon i {
-            color: var(--primary);
+            color: var(--secondary);
             font-size: 1.2rem;
         }
 
@@ -649,7 +694,7 @@
             padding: 80px 0 20px;
             position: relative;
         }
-
+        
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -663,7 +708,7 @@
             position: relative;
             padding-bottom: 10px;
         }
-
+        
         .footer-col h3:after {
             content: '';
             position: absolute;
@@ -751,6 +796,12 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: rgba(255, 255, 255, 0.5);
             font-size: 0.9rem;
+        }
+
+        .footer-logo {
+            max-width: 180px;
+            height: auto;
+            margin-bottom: 20px;
         }
 
         .back-to-top {
@@ -933,7 +984,7 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <img src="https://via.placeholder.com/150x50?text=SSB+Excellence" alt="SSB Excellence Logo">
+                <img src="SSB EXCELLENCE Logo.jpg" alt="SSB EXCELLENCE Logo">
             </div>
             <nav class="navbar">
                 <ul class="nav-links">
@@ -954,35 +1005,31 @@
     <section class="hero">
         <div class="container">
             <h1>Your Journey to Becoming an Officer Starts Here</h1>
-            <p>SSB Excellence provides premier coaching for defense aspirants to crack the SSB interview with confidence. Our proven methodology has helped hundreds of candidates realize their dream of serving the nation.</p>
+            <p>SSB EXCELLENCE provides premier coaching for defence aspirants. Every candidate is mentored to crack the SSB exam and interview with confidence. Our proven methodology has helped candidates realize their dream of serving the nation.</p>
             <div class="hero-btns">
-                <a href="contact.html" class="btn btn-primary">Enroll Now</a>
+                <a href="https://docs.google.com/forms/d/1FnsDlmIsO_Cs-V_SezJH4RxDeQYw6_oJZ6RGwno9ifU/edit" class="btn btn-primary" target="_blank">Enroll Now</a>
                 <a href="courses.html" class="btn btn-outline">Our Programs</a>
             </div>
         </div>
     </section>
 
     <!-- Stats Counter -->
-    <section class="stats">
-        <div class="container">
-            <div class="stat-item">
-                <div class="count" data-count="500">0</div>
-                <p>Successful Candidates</p>
-            </div>
-            <div class="stat-item">
-                <div class="count" data-count="95">0</div>
-                <p>% Screening Success Rate</p>
-            </div>
-            <div class="stat-item">
-                <div class="count" data-count="12">0</div>
-                <p>Years of Experience</p>
-            </div>
-            <div class="stat-item">
-                <div class="count" data-count="50">0</div>
-                <p>Expert Mentors</p>
-            </div>
+<section class="stats">
+    <div class="container">
+        <div class="stat-item">
+            <div class="count" data-count="500+">500+</div>
+            <p>Successful Candidates</p>
         </div>
-    </section>
+        <div class="stat-item">
+            <div class="count" data-count="33">33</div>
+            <p>% Screening Success Rate</p>
+        </div>
+        <div class="stat-item">
+            <div class="count" data-count="25">25</div>
+            <p>Years of Experience</p>
+        </div>
+    </div>
+</section>
 
     <!-- Services Section -->
     <section class="services">
@@ -1036,9 +1083,9 @@
     <section class="about">
         <div class="container">
             <div class="about-content">
-                <h2>About <span>SSB Excellence</span></h2>
-                <p>Founded by a team of ex-defense officers and SSB experts, SSB Excellence has been transforming defense aspirants into commissioned officers since 2010. Our unique methodology combines psychological insights with practical training to bring out the officer-like qualities in every candidate.</p>
-                <p>We don't just train you for the SSB - we help you develop the mindset, personality, and leadership qualities that the defense forces look for in their officers.</p>
+                <h2>About <span>SSB EXCELLENCE</span></h2>
+                <p>At SSB EXCELLENCE candidates learn to understand the  evaluation methods and techniques of the psychologist and GTO. After rigorous practise of over 60+hrs and hundreds of exercises candidates become so familiar with the TAT, WAT , SRT , Lecturette, GPE ,GD and mock interviews that actual SSB becomes a breeze and not a nerve racking experience.  Candidates are equipped with a stencil template which allows their thoughts to be presented within minutes as per the expectation of SSB. Instead of producing prefabricated spoon fed responses candidates retain their individual flavour and thought process while impressing the psychologist , GTO and IO guaranteeing a recommendation.</p>
+                <p>Candidates are personally evaluated on a daily basis with regular custom feedback on each and every exercise. Candidates become self-evaluators by focusing on their inner self, identify their own strengths and weaknesses, and work upon their weakness by stepping out of their comfort zone to develop till recommended.</p>
                 
                 <div class="about-features">
                     <div class="feature-item">
@@ -1047,7 +1094,7 @@
                         </div>
                         <div class="feature-text">
                             <h4>Expert Mentors</h4>
-                            <p>Our team includes retired defense officers and psychologists with decades of SSB experience.</p>
+                            <p>Our team includes retired defense officer and mentors with decades of SSB experience.</p>
                         </div>
                     </div>
                     <div class="feature-item">
@@ -1073,7 +1120,7 @@
                 <a href="about.html" class="btn btn-primary">Know More About Us</a>
             </div>
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1580130732478-4e339fb33746?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="SSB Excellence Team">
+                <img src="VK Singh pic v2.jpg" alt="SSB EXCELLENCE Team">
             </div>
         </div>
     </section>
@@ -1089,7 +1136,7 @@
             <div class="testimonial-slider">
                 <div class="testimonial-item">
                     <div class="testimonial-content">
-                        SSB Excellence transformed my approach completely. The psychological test training was particularly helpful. I cleared my SSB in the first attempt and am now a proud cadet at IMA. The personalized feedback made all the difference!
+                        SSB EXCELLENCE transformed my approach completely. The psychological test training was particularly helpful. I cleared my SSB in the first attempt and am now a proud cadet at IMA. The personalized feedback made all the difference!
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
@@ -1119,7 +1166,7 @@
                 
                 <div class="testimonial-item">
                     <div class="testimonial-content">
-                        After two unsuccessful attempts, I joined SSB Excellence. Their approach to personality development and interview techniques was game-changing. The mock interviews were so realistic that the actual SSB felt familiar. Highly recommend!
+                        After two unsuccessful attempts, I joined SSB EXCELLENCE. Their approach to personality development and interview techniques was game-changing. The mock interviews were so realistic that the actual SSB felt familiar. Highly recommend!
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
@@ -1145,8 +1192,8 @@
             <h2>Ready to Begin Your SSB Journey?</h2>
             <p>Join hundreds of successful candidates who have realized their dream of serving the nation with our expert guidance and proven training methodology.</p>
             <div class="cta-btns">
-                <a href="contact.html" class="btn btn-primary">Enroll Now</a>
-                <a href="tel:+917376399246" class="btn btn-outline-white">Call Us</a>
+                <a href="https://docs.google.com/forms/d/1FnsDlmIsO_Cs-V_SezJH4RxDeQYw6_oJZ6RGwno9ifU/edit" class="btn btn-primary" target="_blank">Enroll Now</a>
+                <a href="tel:+919923703155" class="btn btn-outline-white">Call Us</a>
             </div>
         </div>
     </section>
@@ -1156,14 +1203,12 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col footer-about">
-                    <img src="https://via.placeholder.com/150x50?text=SSB+Excellence" alt="SSB Excellence Logo" class="footer-logo">
-                    <p>SSB Excellence is India's premier SSB coaching institute, dedicated to helping defense aspirants realize their dream of serving the nation as commissioned officers.</p>
+                    <div class="footer-logo">
+                        <img src="SSB Excellence Logo.jpg" alt="SSB Excellence Logo" class="footer-logo">
+                    </div>
+                    <p>SSB EXCELLENCE is India's premier SSB coaching institute, dedicated to helping defense aspirants realize their dream of serving the nation as commissioned officers.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/ssb_excellence/?hl=en"><i class="fab fa-instagram"></i></a>   
                     </div>
                 </div>
                 
@@ -1192,14 +1237,14 @@
                 
                 <div class="footer-col footer-contact">
                     <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Defense Colony, Near SSB Center, Allahabad, UP 211001</p>
-                    <p><i class="fas fa-phone-alt"></i> +91 73763 99246</p>
-                    <p><i class="fas fa-envelope"></i> shivang.m04@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> SSB EXCELLENCE ,2nd Floor, Chinhat Plaza, Shankar Puri, Faizabad Rd, Lucknow,Uttar Pradesh, 226028</p>
+                    <p><i class="fas fa-phone-alt"></i> 9923703155, 7738230065</p>
+                    <p><i class="fas fa-envelope"></i> ssbexcellence25@gmail.com </p>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 SSB Excellence</p>
+                <p>&copy; 2023 SSB EXCELLENCE</p>
             </div>
         </div>
     </footer>
@@ -1274,31 +1319,44 @@
                 });
             });
 
-            // Animate stats counter
+            // Animate stats counter - fixed version
             const statItems = document.querySelectorAll('.stat-item .count');
             const statsSection = document.querySelector('.stats');
+            let statsAnimated = false;
             
             function animateStats() {
+                if (statsAnimated) return;
+                
                 const statsPos = statsSection.getBoundingClientRect().top;
                 const screenPos = window.innerHeight / 1.3;
                 
                 if(statsPos < screenPos) {
+                    statsAnimated = true;
                     statItems.forEach(stat => {
                         const target = +stat.getAttribute('data-count');
-                        const count = +stat.innerText;
+                        let count = 0;
                         const increment = target / 50;
                         
-                        if(count < target) {
-                            stat.innerText = Math.ceil(count + increment);
-                            setTimeout(animateStats, 20);
-                        } else {
-                            stat.innerText = target;
-                        }
+                        const updateCount = () => {
+                            if(count < target) {
+                                count = Math.min(target, count + increment);
+                                stat.innerText = Math.ceil(count);
+                                requestAnimationFrame(updateCount);
+                            }
+                        };
+                        
+                        updateCount();
                     });
                 }
             }
             
+            // Initialize with final values (for when page loads with stats already in view)
+            statItems.forEach(stat => {
+                stat.innerText = stat.getAttribute('data-count');
+            });
+            
             window.addEventListener('scroll', animateStats);
+            animateStats(); // Run once on load in case stats are already visible
             
             // Add active class to current page in navigation
             const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -1342,9 +1400,9 @@
             const ctaBtns = document.querySelectorAll('.cta .btn');
             setInterval(() => {
                 ctaBtns.forEach(btn => {
-                    btn.classList.add('pulse');
+                    btn.style.animation = 'pulse 1s';
                     setTimeout(() => {
-                        btn.classList.remove('pulse');
+                        btn.style.animation = '';
                     }, 1000);
                 });
             }, 5000);

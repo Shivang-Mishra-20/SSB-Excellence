@@ -9,907 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #4a7729; /* Military green */
-            --primary-dark: #3a5f20;
-            --secondary: #d4af37; /* Gold */
-            --accent: #8b0000; /* Dark red */
-            --light: #f8f9fa;
-            --dark: #212529;
-            --gray: #6c757d;
-            --success: #28a745;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.7;
-            color: var(--dark);
-            overflow-x: hidden;
-            background-color: #fff;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            line-height: 1.3;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        section {
-            padding: 100px 0;
-            position: relative;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-            position: relative;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title h2:after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 3px;
-            background: var(--secondary);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .section-title p {
-            color: var(--gray);
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.4s ease;
-            text-align: center;
-            cursor: pointer;
-            border: none;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            border: 2px solid var(--primary);
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            border-color: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(74, 119, 41, 0.3);
-            animation: pulse 1s infinite;
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(74, 119, 41, 0.3);
-        }
-
-        .btn-outline-white {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-outline-white:hover {
-            background: white;
-            color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
-        }
-
-        .btn-secondary {
-            background: var(--secondary);
-            color: white;
-            border: 2px solid var(--secondary);
-        }
-
-        .btn-secondary:hover {
-            background: #c19d30;
-            border-color: #c19d30;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
-            animation: pulse 1s infinite;
-        }
-
-        /* Header Styles */
-        .header {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            padding: 15px 0;
-            transition: all 0.4s ease;
-        }
-
-        .header.scrolled {
-            padding: 10px 0;
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 50px;
-            transition: all 0.4s ease;
-        }
-
-        .header.scrolled .logo img {
-            height: 40px;
-        }
-
-        .navbar .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .navbar .nav-links li {
-            margin-left: 30px;
-            position: relative;
-        }
-
-        .navbar .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 600;
-            transition: color 0.3s;
-            position: relative;
-            font-size: 1rem;
-        }
-
-        .navbar .nav-links a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            bottom: -5px;
-            left: 0;
-            transition: width 0.3s ease;
-        }
-
-        .navbar .nav-links a:hover:after,
-        .navbar .nav-links a.active:after {
-            width: 100%;
-        }
-
-        .navbar .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .navbar .nav-links a.active {
-            color: var(--primary);
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            font-size: 1.8rem;
-            color: var(--primary);
-        }
-
-        /* Page Banner */
-        .page-banner {
-    height: 400px;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                url('https://shop.ssbcrack.com/cdn/shop/articles/IMA_POP_June_4.jpg?v=1749897347&width=1500');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding-top: 80px;
-    position: relative;
-    overflow: hidden;
-}
-
-.page-banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 0;
-}
-
-.page-banner .container {
-    position: relative;
-    z-index: 1;
-}
-
-        .page-banner h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            animation: fadeInUp 1s ease;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .breadcrumb {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            animation: fadeInUp 1s ease 0.2s both;
-        }
-
-        .breadcrumb li {
-            margin: 0 10px;
-            position: relative;
-        }
-
-        .breadcrumb li:after {
-            content: '/';
-            position: absolute;
-            right: -15px;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .breadcrumb li:last-child:after {
-            display: none;
-        }
-
-        .breadcrumb a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .breadcrumb a:hover {
-            color: white;
-        }
-
-        .breadcrumb .current {
-            color: white;
-            font-weight: 600;
-        }
-
-        /* Courses Section */
-        .courses {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .courses-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .tab-btn {
-            padding: 12px 25px;
-            background: white;
-            border: none;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            border-bottom: 3px solid transparent;
-        }
-
-        .tab-btn.active {
-            color: var(--primary);
-            border-bottom: 3px solid var(--primary);
-        }
-
-        .tab-btn:hover:not(.active) {
-            color: var(--primary);
-        }
-
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .course-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            transition: all 0.4s ease;
-            border: 1px solid rgba(0,0,0,0.1);
-        }
-
-        .course-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .course-img {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .course-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .course-card:hover .course-img img {
-            transform: scale(1.1);
-        }
-
-        .course-content {
-            padding: 25px;
-        }
-
-        .course-content h3 {
-            margin-bottom: 15px;
-            color: var(--primary);
-            font-size: 1.5rem;
-        }
-
-        .course-meta {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        .course-duration, .course-mode {
-            display: flex;
-            align-items: center;
-        }
-
-        .course-duration i, .course-mode i {
-            margin-right: 5px;
-            color: var(--primary);
-        }
-
-        .course-price {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .course-price span {
-            font-size: 1rem;
-            font-weight: 400;
-            color: var(--gray);
-        }
-
-        .course-features {
-            margin-bottom: 20px;
-        }
-
-        .course-features li {
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-        }
-
-        .course-features i {
-            color: var(--primary);
-            margin-right: 10px;
-            font-size: 0.8rem;
-        }
-
-        /* Course Details */
-        .course-details {
-            position: relative;
-            overflow: hidden;
-            background: var(--light);
-        }
-
-        .course-details:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://www.transparenttextures.com/patterns/concrete-wall.png');
-            opacity: 0.03;
-            z-index: 0;
-        }
-
-        .details-container {
-            display: flex;
-            gap: 50px;
-        }
-
-        .details-content {
-            flex: 2;
-        }
-
-        .details-sidebar {
-            flex: 1;
-        }
-
-        .details-tabs {
-            display: flex;
-            border-bottom: 1px solid #ddd;
-            margin-bottom: 30px;
-        }
-
-        .details-tab {
-            padding: 12px 25px;
-            background: none;
-            border: none;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            border-bottom: 3px solid transparent;
-            color: var(--gray);
-        }
-
-        .details-tab.active {
-            color: var(--primary);
-            border-bottom: 3px solid var(--primary);
-        }
-
-        .details-tab:hover:not(.active) {
-            color: var(--primary);
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        .details-content h3 {
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-
-        .details-content p {
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-
-        .details-content ul {
-            margin-bottom: 20px;
-            padding-left: 20px;
-        }
-
-        .details-content ul li {
-            margin-bottom: 10px;
-        }
-
-        .sidebar-card {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
-            border: 1px solid rgba(0,0,0,0.1);
-        }
-
-        .sidebar-card h3 {
-            margin-bottom: 20px;
-            color: var(--primary);
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .sidebar-card h3:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 2px;
-            background: var(--secondary);
-        }
-
-        .course-info li {
-            margin-bottom: 15px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .course-info span:first-child {
-            font-weight: 600;
-            color: var(--dark);
-        }
-
-        .course-info span:last-child {
-            color: var(--gray);
-        }
-
-        .instructor {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            border: 1px solid rgba(0,0,0,0.1);
-            padding: 15px;
-            border-radius: 8px;
-            background: white;
-        }
-
-        .instructor-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 20px;
-            border: 3px solid var(--primary);
-        }
-
-        .instructor-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .instructor-info h4 {
-            margin-bottom: 5px;
-            color: var(--primary);
-        }
-
-        .instructor-info p {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        /* Call to Action */
-        .cta {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            text-align: center;
-            padding: 80px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-        }
-
-        .cta p {
-            max-width: 700px;
-            margin: 0 auto 40px;
-            font-size: 1.2rem;
-        }
-
-        .cta-btns {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 80px 0 20px;
-            position: relative;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-
-        .footer-col h3 {
-            font-size: 1.3rem;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-col h3:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 2px;
-            background: var(--secondary);
-        }
-
-        .footer-about p {
-            margin-bottom: 20px;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-
-        .footer-links a:hover {
-            color: white;
-            transform: translateX(5px);
-        }
-
-        .footer-links a:before {
-            content: '\f054';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            margin-right: 8px;
-            font-size: 0.7rem;
-            color: var(--secondary);
-        }
-
-        .footer-contact p {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .footer-contact i {
-            margin-right: 15px;
-            color: var(--secondary);
-            font-size: 1.1rem;
-            margin-top: 3px;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.9rem;
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s;
-            z-index: 999;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background: var(--primary-dark);
-            transform: translateY(-5px);
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .page-banner h1 {
-                font-size: 2.5rem;
-            }
-            
-            .details-container {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 992px) {
-            section {
-                padding: 80px 0;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .section-title h2 {
-                font-size: 2rem;
-            }
-
-            .page-banner {
-                height: 350px;
-            }
-
-            .page-banner h1 {
-                font-size: 2rem;
-            }
-
-            .navbar .nav-links {
-                display: none;
-                position: absolute;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                padding: 20px 0;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-                z-index: 999;
-            }
-
-            .navbar .nav-links.active {
-                display: flex;
-            }
-
-            .navbar .nav-links li {
-                margin: 0;
-                text-align: center;
-                padding: 15px 0;
-            }
-
-            .hamburger {
-                display: block;
-            }
-            
-            .courses-tabs {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .tab-btn {
-                width: 100%;
-                text-align: center;
-                margin-bottom: 5px;
-            }
-            
-            .details-tabs {
-                flex-wrap: wrap;
-            }
-            
-            .cta-btns {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        @media (max-width: 576px) {
-            section {
-                padding: 60px 0;
-            }
-
-            .page-banner {
-                height: 300px;
-            }
-
-            .btn {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
-            
-            .courses-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header & Navigation -->
     <header class="header">
         <div class="container">
             <div class="logo">
-                <img src="https://via.placeholder.com/150x50?text=SSB+Excellence" alt="SSB Excellence Logo">
+                <img src="SSB Excellence Logo.jpg" alt="SSB Excellence Logo">
             </div>
             <nav class="navbar">
                 <ul class="nav-links">
@@ -928,14 +35,14 @@
 
     <!-- Page Banner -->
     <section class="page-banner">
-    <div class="container">
-        <h1>Our SSB Preparation Courses</h1>
-        <ul class="breadcrumb">
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Courses</li>
-        </ul>
-    </div>
-</section>
+        <div class="container">
+            <h1>Our SSB Preparation Courses</h1>
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li class="current">Courses</li>
+            </ul>
+        </div>
+    </section>
 
     <!-- Courses Section -->
     <section class="courses">
@@ -945,138 +52,150 @@
                 <p>Choose from our range of specialized courses designed to help you excel at every stage of the SSB interview process.</p>
             </div>
             
-            <div class="courses-tabs">
-                <button class="tab-btn active" data-tab="all">All Courses</button>
-                <button class="tab-btn" data-tab="foundation">Foundation</button>
-                <button class="tab-btn" data-tab="advanced">Advanced</button>
-                <button class="tab-btn" data-tab="online">Online</button>
-                <button class="tab-btn" data-tab="crash">Crash Courses</button>
-            </div>
-            
             <div class="courses-grid">
-                <div class="course-card" data-category="foundation">
-                    <div class="course-img">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="SSB Foundation Course">
-                    </div>
-                    <div class="course-content">
-                        <h3>SSB Foundation Course</h3>
-                        <div class="course-meta">
-                            <span class="course-duration"><i class="far fa-clock"></i> 4 Weeks</span>
-                            <span class="course-mode"><i class="fas fa-chalkboard-teacher"></i> Classroom</span>
-                        </div>
-                        <div class="course-price">₹15,999 <span>+ GST</span></div>
-                        <ul class="course-features">
-                            <li><i class="fas fa-check"></i> Complete SSB orientation</li>
-                            <li><i class="fas fa-check"></i> Psychological test training</li>
-                            <li><i class="fas fa-check"></i> Basic GTO tasks</li>
-                            <li><i class="fas fa-check"></i> Interview techniques</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary btn-block">Enroll Now</a>
-                    </div>
-                </div>
-                
-                <div class="course-card" data-category="advanced">
-                    <div class="course-img">
-                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="SSB Advanced Course">
-                    </div>
-                    <div class="course-content">
-                        <h3>SSB Advanced Course</h3>
-                        <div class="course-meta">
-                            <span class="course-duration"><i class="far fa-clock"></i> 6 Weeks</span>
-                            <span class="course-mode"><i class="fas fa-chalkboard-teacher"></i> Classroom</span>
-                        </div>
-                        <div class="course-price">₹24,999 <span>+ GST</span></div>
-                        <ul class="course-features">
-                            <li><i class="fas fa-check"></i> Comprehensive SSB preparation</li>
-                            <li><i class="fas fa-check"></i> Advanced psychological profiling</li>
-                            <li><i class="fas fa-check"></i> Full GTO module</li>
-                            <li><i class="fas fa-check"></i> Mock interviews with feedback</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary btn-block">Enroll Now</a>
-                    </div>
-                </div>
-                
-                <div class="course-card" data-category="online">
+                <!-- Course 1 -->
+                <div class="course-card">
                     <div class="course-img">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Online SSB Coaching">
                     </div>
                     <div class="course-content">
-                        <h3>Online SSB Coaching</h3>
+                        <h3>Practise session & 2 Mock interviews + Rigorous Psychology exercises</h3>
                         <div class="course-meta">
-                            <span class="course-duration"><i class="far fa-clock"></i> 8 Weeks</span>
+                            <span class="course-duration"><i class="far fa-clock"></i> 24 Days</span>
                             <span class="course-mode"><i class="fas fa-laptop"></i> Online</span>
                         </div>
-                        <div class="course-price">₹9,999 <span>+ GST</span></div>
-                        <ul class="course-features">
-                            <li><i class="fas fa-check"></i> Live interactive sessions</li>
-                            <li><i class="fas fa-check"></i> Recorded lectures</li>
-                            <li><i class="fas fa-check"></i> Personalized feedback</li>
-                            <li><i class="fas fa-check"></i> Flexible schedule</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary btn-block">Enroll Now</a>
+                        <div class="course-price">₹10,000 <span>+ GST</span></div>
+                        
+                        <div class="features-container">
+                            <div class="features-column">
+                                <ul class="course-features">
+                                    <li><i class="fas fa-check"></i> Live interactive sessions</li>
+                                    <li><i class="fas fa-check"></i> Complete SSB orientation</li>
+                                    <li><i class="fas fa-check"></i> Psychological test training</li>
+                                    <li><i class="fas fa-check"></i> TAT, WAT, SRT training</li>
+                                </ul>
+                            </div>
+                            <div class="features-column">
+                                <ul class="course-features">
+                                    <li><i class="fas fa-check"></i> All GTO tasks</li>
+                                    <li><i class="fas fa-check"></i> Interview techniques</li>
+                                    <li><i class="fas fa-check"></i> Advanced psychological profiling</li>
+                                    <li><i class="fas fa-check"></i> 2 Mock interviews with feedback</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="course-actions">
+                            <a href="https://docs.google.com/forms/d/1FnsDlmIsO_Cs-V_SezJH4RxDeQYw6_oJZ6RGwno9ifU/edit" class="btn btn-primary btn-block">Enroll Now</a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="course-card" data-category="crash">
+                <!-- Course 2 -->
+                <div class="course-card">
                     <div class="course-img">
-                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="SSB Crash Course">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Offline SSB Coaching">
                     </div>
                     <div class="course-content">
-                        <h3>SSB Crash Course</h3>
+                        <h3>Unlimited practise session & 2 Mock interviews + Rigorous Psychology exercises</h3>
+                        <div class="course-meta">
+                            <span class="course-duration"><i class="far fa-clock"></i> 28 Days</span>
+                            <span class="course-mode"><i class="fas fa-chalkboard-teacher"></i> Classroom</span>
+                        </div>
+                        <div class="course-price">₹12,000 <span>+ GST</span></div>
+                        
+                        <div class="features-container">
+                            <div class="features-column">
+                                <ul class="course-features">
+                                    <li><i class="fas fa-check"></i> Live in-person sessions</li>
+                                    <li><i class="fas fa-check"></i> Complete SSB orientation</li>
+                                    <li><i class="fas fa-check"></i> Psychological test training</li>
+                                    <li><i class="fas fa-check"></i> TAT, WAT, SRT training</li>
+                                </ul>
+                            </div>
+                            <div class="features-column">
+                                <ul class="course-features">
+                                    <li><i class="fas fa-check"></i> All GTO tasks</li>
+                                    <li><i class="fas fa-check"></i> Interview techniques</li>
+                                    <li><i class="fas fa-check"></i> Self-description techniques</li>
+                                    <li><i class="fas fa-check"></i> 2 Mock interviews with feedback</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="course-actions">
+                            <a href="https://docs.google.com/forms/d/1FnsDlmIsO_Cs-V_SezJH4RxDeQYw6_oJZ6RGwno9ifU/edit" class="btn btn-primary btn-block">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 3 -->
+                <div class="course-card">
+                    <div class="course-img">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="GTO Capsule">
+                    </div>
+                    <div class="course-content">
+                        <h3>GTO Capsule (2 weeks) + Unlimited practise session & 2 Mock interviews</h3>
                         <div class="course-meta">
                             <span class="course-duration"><i class="far fa-clock"></i> 2 Weeks</span>
                             <span class="course-mode"><i class="fas fa-chalkboard-teacher"></i> Classroom</span>
                         </div>
-                        <div class="course-price">₹12,999 <span>+ GST</span></div>
-                        <ul class="course-features">
-                            <li><i class="fas fa-check"></i> Intensive SSB preparation</li>
-                            <li><i class="fas fa-check"></i> Screening test strategies</li>
-                            <li><i class="fas fa-check"></i> GTO task practice</li>
-                            <li><i class="fas fa-check"></i> Mock interviews</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary btn-block">Enroll Now</a>
+                        <div class="course-price">₹6,500 <span>+ GST</span></div>
+                        
+                        <div class="features-container">
+                            <div class="features-column">
+                                <ul class="course-features">
+                                    <li><i class="fas fa-check"></i> Comprehensive GTO training</li>
+                                    <li><i class="fas fa-check"></i> PGT, HGT, IO, GT tasks</li>
+                                    <li><i class="fas fa-check"></i> Group discussion techniques</li>
+                                </ul>
+                            </div>
+                            <div class="features-column">
+                                <ul class="course-features">
+                                    <li><i class="fas fa-check"></i> Lecturette preparation</li>
+                                    <li><i class="fas fa-check"></i> Group Planning Exercise training</li>
+                                    <li><i class="fas fa-check"></i> Command task strategies</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="course-actions">
+                            <a href="https://docs.google.com/forms/d/1FnsDlmIsO_Cs-V_SezJH4RxDeQYw6_oJZ6RGwno9ifU/edit" class="btn btn-primary btn-block">Enroll Now</a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="course-card" data-category="foundation">
+                <!-- Course 4 -->
+                <div class="course-card">
                     <div class="course-img">
-                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Psychological Test Mastery">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Practice Sessions">
                     </div>
                     <div class="course-content">
-                        <h3>Psychological Test Mastery</h3>
+                        <h3>Unlimited practise session &  2 Mock interviews</h3>
                         <div class="course-meta">
-                            <span class="course-duration"><i class="far fa-clock"></i> 3 Weeks</span>
+                            <span class="course-duration"><i class="far fa-clock"></i> Flexible</span>
                             <span class="course-mode"><i class="fas fa-chalkboard-teacher"></i> Classroom</span>
                         </div>
-                        <div class="course-price">₹10,999 <span>+ GST</span></div>
-                        <ul class="course-features">
-                            <li><i class="fas fa-check"></i> TAT, WAT, SRT training</li>
-                            <li><i class="fas fa-check"></i> Self-description techniques</li>
-                            <li><i class="fas fa-check"></i> Psychological profiling</li>
-                            <li><i class="fas fa-check"></i> Expert evaluation</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary btn-block">Enroll Now</a>
-                    </div>
-                </div>
-                
-                <div class="course-card" data-category="advanced">
-                    <div class="course-img">
-                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="GTO Masterclass">
-                    </div>
-                    <div class="course-content">
-                        <h3>GTO Masterclass</h3>
-                        <div class="course-meta">
-                            <span class="course-duration"><i class="far fa-clock"></i> 3 Weeks</span>
-                            <span class="course-mode"><i class="fas fa-chalkboard-teacher"></i> Classroom</span>
+                        <div class="course-price">₹5,000 <span>+ GST</span></div>
+                        
+                        <div class="features-container">
+                            <div class="features-column">
+                                <ul class="course-features">
+                                    <li><i class="fas fa-check"></i> 2-3 Mock interviews daily</li>
+                                    <li><i class="fas fa-check"></i> Practice sessions every weekend</li>
+                                </ul>
+                            </div>
+                            <div class="features-column">
+                                <ul class="course-features">
+                                    <li><i class="fas fa-check"></i> Discussion of latest questions</li>
+                                    <li><i class="fas fa-check"></i> Feedback from recommended candidates</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="course-price">₹14,999 <span>+ GST</span></div>
-                        <ul class="course-features">
-                            <li><i class="fas fa-check"></i> Comprehensive GTO training</li>
-                            <li><i class="fas fa-check"></i> Group discussion techniques</li>
-                            <li><i class="fas fa-check"></i> Practical outdoor tasks</li>
-                            <li><i class="fas fa-check"></i> Command task strategies</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary btn-block">Enroll Now</a>
+                        
+                        <div class="course-actions">
+                            <a href="https://docs.google.com/forms/d/1FnsDlmIsO_Cs-V_SezJH4RxDeQYw6_oJZ6RGwno9ifU/edit" class="btn btn-primary btn-block">Enroll Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1096,16 +215,15 @@
                     <div class="details-tabs">
                         <button class="details-tab active" data-tab="overview">Overview</button>
                         <button class="details-tab" data-tab="curriculum">Curriculum</button>
-                        <button class="details-tab" data-tab="instructors">Instructors</button>
                     </div>
                     
                     <div class="tab-content active" id="overview">
-                        <h3>About This Course</h3>
-                        <p>Our SSB Advanced Course is the most comprehensive preparation program available, designed by ex-SSB assessors to give you the best chance of success in your SSB interview. This 6-week intensive program covers all aspects of the SSB interview process with equal emphasis on psychological tests, GTO tasks, and personal interview.</p>
-                        <p>The course is structured to progressively build your skills and confidence, starting with fundamental concepts and moving to advanced techniques used by successful candidates. You'll receive personalized feedback at every stage to help you identify and improve your weak areas.</p>
+                        <h3>About Our Courses</h3>
+                        <p>Our SSB training programs are designed by ex-SSB assessors to give you the best chance of success in your SSB interview. We offer comprehensive preparation covering all aspects of the SSB interview process with equal emphasis on psychological tests, GTO tasks, and personal interview.</p>
+                        <p>The courses are structured to progressively build your skills and confidence, starting with fundamental concepts and moving to advanced techniques used by successful candidates. You'll receive personalized feedback at every stage to help you identify and improve your weak areas.</p>
                         
                         <h3>Who Should Attend</h3>
-                        <p>This course is ideal for:</p>
+                        <p>Our courses are ideal for:</p>
                         <ul>
                             <li>First-time SSB aspirants who want thorough preparation</li>
                             <li>Candidates who have previously screened out and want to improve</li>
@@ -1127,129 +245,48 @@
                         <h3>Course Curriculum</h3>
                         <p>Our structured curriculum covers all aspects of the SSB interview process:</p>
                         
-                        <h4>Week 1: Orientation & Psychological Tests</h4>
+                        <h4>Week 1 : Psychology Training</h4>
                         <ul>
                             <li>Understanding SSB process and expectations</li>
+                            <li>PIQ questionnaire practise</li>
                             <li>Officer Like Qualities (OLQs) and how to demonstrate them</li>
                             <li>Thematic Apperception Test (TAT) techniques</li>
-                            <li>Word Association Test (WAT) strategies</li>
-                        </ul>
-                        
-                        <h4>Week 2: Psychological Tests Continued</h4>
-                        <ul>
+                            <li>Association Test (WAT) strategies</li>
                             <li>Situation Reaction Test (SRT) mastery</li>
-                            <li>Self Description techniques</li>
+                            <li>Self Description techniques</li> </li>
                             <li>Psychological profiling and analysis</li>
                             <li>Practice tests with expert evaluation</li>
                         </ul>
                         
-                        <h4>Week 3: Group Testing Officer Tasks</h4>
+                        <h4>Week 2: Group Testing Officer Training</h4>
                         <ul>
                             <li>Group Discussion strategies</li>
                             <li>Group Planning Exercise techniques</li>
                             <li>Progressive Group Task fundamentals</li>
                             <li>Group Obstacle Race preparation</li>
-                        </ul>
-                        
-                        <h4>Week 4: Advanced GTO Tasks</h4>
-                        <ul>
                             <li>Half Group Task strategies</li>
-                            <li>Command Task mastery</li>
-                            <li>Individual Obstacles techniques</li>
                             <li>Lecturette preparation and delivery</li>
+                            <li>Command Task techniques</li>
+                            <li>Individual Obstacle demonstration</li>
+                            <li>Final Group Task strategies</li>
                         </ul>
                         
-                        <h4>Week 5: Personal Interview</h4>
+                        <h4>Week 3: Personal Interview Training </h4>
                         <ul>
                             <li>Interview preparation and common questions</li>
+                            <li>Daily 2 mock interviews with recommended students</li>
+                            <li>Current affairs </li>
                             <li>Body language and communication skills</li>
                             <li>Personal story development</li>
                             <li>Mock interviews with feedback</li>
                         </ul>
-                        
-                        <h4>Week 6: Final Preparation</h4>
+                        <h4>Week 4: Evaluation and Feedback</h4>
                         <ul>
                             <li>Full mock SSB interviews</li>
                             <li>Performance analysis and improvement plan</li>
                             <li>Final tips and strategies</li>
-                            <li>Q&A with experienced assessors</li>
+                            <li>Q&A with experienced assessor</li>
                         </ul>
-                    </div>
-                    
-                    <div class="tab-content" id="instructors">
-                        <h3>Meet Your Instructors</h3>
-                        <p>Learn from the best in the industry - our faculty comprises retired defense officers and psychologists with decades of SSB assessment experience.</p>
-                        
-                        <div class="instructor">
-                            <div class="instructor-img">
-                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Col. Rajesh Verma">
-                            </div>
-                            <div class="instructor-info">
-                                <h4>Col. Rajesh Verma (Retd.)</h4>
-                                <p>Chief Instructor</p>
-                                <p>Former President, Services Selection Board with 35+ years of experience in SSB interviews. Col. Verma has assessed thousands of candidates and brings unparalleled insight into what it takes to succeed at SSB.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="instructor">
-                            <div class="instructor-img">
-                                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Dr. Priya Sharma">
-                            </div>
-                            <div class="instructor-info">
-                                <h4>Dr. Priya Sharma</h4>
-                                <p>Chief Psychologist</p>
-                                <p>PhD in Clinical Psychology with 20+ years of experience in psychological testing. Dr. Sharma specializes in helping candidates understand and master the psychological tests at SSB.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="instructor">
-                            <div class="instructor-img">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Maj. Arun Khanna">
-                            </div>
-                            <div class="instructor-info">
-                                <h4>Maj. Arun Khanna (Retd.)</h4>
-                                <p>GTO Expert</p>
-                                <p>Former GTO at SSB Allahabad with 25+ years of experience in group testing. Maj. Khanna's practical approach to GTO tasks has helped hundreds of candidates excel in this challenging phase.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="details-sidebar">
-                    <div class="sidebar-card">
-                        <h3>Course Information</h3>
-                        <ul class="course-info">
-                            <li><span>Duration:</span> <span>6 Weeks</span></li>
-                            <li><span>Schedule:</span> <span>Mon-Sat, 9AM-5PM</span></li>
-                            <li><span>Batch Size:</span> <span>Max 20 students</span></li>
-                            <li><span>Course Fee:</span> <span>₹24,999 + GST</span></li>
-                            <li><span>Next Batch:</span> <span>15th June 2023</span></li>
-                            <li><span>Location:</span> <span>Allahabad Center</span></li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary btn-block">Enroll Now</a>
-                    </div>
-                    
-                    <div class="sidebar-card">
-                        <h3>Have Questions?</h3>
-                        <p>Contact our course advisor for more information about this program.</p>
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="info-text">
-                                <h4>Call Us</h4>
-                                <p><a href="tel:+917376399246">+91 73763 99246</a></p>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="info-text">
-                                <h4>Email Us</h4>
-                                <p><a href="mailto:shivang.m04@gmail.com">shivang.m04@gmail.com</a></p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1262,8 +299,8 @@
             <h2>Ready to Begin Your SSB Journey?</h2>
             <p>Join hundreds of successful candidates who have realized their dream of serving the nation with our expert guidance and proven training methodology.</p>
             <div class="cta-btns">
-                <a href="contact.html" class="btn btn-primary">Enroll Now</a>
-                <a href="tel:+917376399246" class="btn btn-outline-white">Call Us</a>
+                <a href="https://docs.google.com/forms/d/1FnsDlmIsO_Cs-V_SezJH4RxDeQYw6_oJZ6RGwno9ifU/edit" class="btn btn-primary">Enroll Now</a>
+                <a href="tel:+919923703155" class="btn btn-outline-white">Call Us</a>
             </div>
         </div>
     </section>
@@ -1273,14 +310,10 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col footer-about">
-                    <img src="https://via.placeholder.com/150x50?text=SSB+Excellence" alt="SSB Excellence Logo" class="footer-logo">
+                    <img src="SSB Excellence Logo.jpg" alt="SSB Excellence Logo" class="footer-logo">
                     <p>SSB Excellence is India's premier SSB coaching institute, dedicated to helping defense aspirants realize their dream of serving the nation as commissioned officers.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/ssb_excellence/?hl=en"><i class="fab fa-instagram"></i></a>   
                     </div>
                 </div>
                 
@@ -1298,20 +331,19 @@
                 <div class="footer-col footer-links">
                     <h3>Our Programs</h3>
                     <ul>
-                        <li><a href="courses.html">Screening Batch</a></li>
-                        <li><a href="courses.html">Full Psych Batch</a></li>
+                        <li><a href="courses.html">Online Training</a></li>
+                        <li><a href="courses.html">Classroom Training</a></li>
                         <li><a href="courses.html">GTO Modules</a></li>
-                        <li><a href="courses.html">Personal Interview</a></li>
-                        <li><a href="courses.html">Final Preparation</a></li>
-                        <li><a href="courses.html">Online Coaching</a></li>
+                        <li><a href="courses.html">Mock Interviews</a></li>
+                        <li><a href="courses.html">Practice Sessions</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col footer-contact">
                     <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Defense Colony, Near SSB Center, Allahabad, UP 211001</p>
-                    <p><i class="fas fa-phone-alt"></i> +91 73763 99246</p>
-                    <p><i class="fas fa-envelope"></i> shivang.m04@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> SSB EXCELLENCE ,2nd Floor, Chinhat Plaza, Shankar Puri, Faizabad Rd, Lucknow,Uttar Pradesh, 226028</p>
+                    <p><i class="fas fa-phone-alt"></i> 9923703155, 7738230065</p>
+                    <p><i class="fas fa-envelope"></i> ssbexcellence25@gmail.com</p>
                 </div>
             </div>
             
@@ -1326,133 +358,6 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
-            
-            hamburger.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                this.querySelector('i').classList.toggle('fa-times');
-                this.querySelector('i').classList.toggle('fa-bars');
-            });
-
-            // Close mobile menu when clicking a link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    hamburger.querySelector('i').classList.add('fa-bars');
-                    hamburger.querySelector('i').classList.remove('fa-times');
-                });
-            });
-
-            // Sticky header on scroll
-            const header = document.querySelector('.header');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 100) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-
-            // Back to top button
-            const backToTopBtn = document.querySelector('.back-to-top');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 300) {
-                    backToTopBtn.classList.add('active');
-                } else {
-                    backToTopBtn.classList.remove('active');
-                }
-            });
-
-            backToTopBtn.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-
-            // Course category tabs
-            const tabBtns = document.querySelectorAll('.tab-btn');
-            const courseCards = document.querySelectorAll('.course-card');
-            
-            tabBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    tabBtns.forEach(b => b.classList.remove('active'));
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    const category = this.getAttribute('data-tab');
-                    
-                    // Show/hide course cards based on category
-                    courseCards.forEach(card => {
-                        if (category === 'all' || card.getAttribute('data-category') === category) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            });
-
-            // Course details tabs
-            const detailsTabs = document.querySelectorAll('.details-tab');
-            const tabContents = document.querySelectorAll('.tab-content');
-            
-            detailsTabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    // Remove active class from all tabs and contents
-                    detailsTabs.forEach(t => t.classList.remove('active'));
-                    tabContents.forEach(c => c.classList.remove('active'));
-                    
-                    // Add active class to clicked tab and corresponding content
-                    this.classList.add('active');
-                    const tabId = this.getAttribute('data-tab');
-                    document.getElementById(tabId).classList.add('active');
-                });
-            });
-
-            // Add active class to current page in navigation
-            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-            const navLinksAll = document.querySelectorAll('.navbar .nav-links a');
-            
-            navLinksAll.forEach(link => {
-                const linkPage = link.getAttribute('href');
-                if (currentPage === linkPage) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
-            });
-
-            // Animation on scroll
-            const animateElements = document.querySelectorAll('.course-card, .details-content, .details-sidebar');
-            
-            function animateOnScroll() {
-                animateElements.forEach(element => {
-                    const elementPos = element.getBoundingClientRect().top;
-                    const screenPos = window.innerHeight / 1.2;
-                    
-                    if(elementPos < screenPos) {
-                        element.style.opacity = '1';
-                        element.style.transform = 'translateY(0)';
-                    }
-                });
-            }
-            
-            // Set initial state
-            animateElements.forEach(element => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(30px)';
-                element.style.transition = 'all 0.6s ease';
-            });
-            
-            window.addEventListener('scroll', animateOnScroll);
-            animateOnScroll(); // Run once on load
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>

@@ -9,328 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
-        :root {
-            --primary: #2a6234;
-            --primary-dark: #1e4725;
-            --secondary: #d4af37;
-            --accent: #e63946;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --gray: #6c757d;
-            --success: #28a745;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.7;
-            color: var(--dark);
-            overflow-x: hidden;
-            background-color: #fff;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            line-height: 1.3;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        section {
-            padding: 100px 0;
-            position: relative;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-            position: relative;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title h2:after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 3px;
-            background: var(--secondary);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .section-title p {
-            color: var(--gray);
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.4s ease;
-            text-align: center;
-            cursor: pointer;
-            border: none;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            border: 2px solid var(--primary);
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            border-color: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(42, 98, 52, 0.3);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(42, 98, 52, 0.3);
-        }
-
-        .btn-secondary {
-            background: var(--secondary);
-            color: white;
-            border: 2px solid var(--secondary);
-        }
-
-        .btn-secondary:hover {
-            background: #c19d2e;
-            border-color: #c19d2e;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
-        }
-
-        .btn-outline-white {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-            transition: all 0.4s ease;
-        }
-
-        .btn-outline-white:hover {
-            background: white;
-            color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
-        }
-
-        .cta-btns {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        @media (max-width: 768px) {
-            .cta-btns {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        /* Header Styles */
-        .header {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            padding: 15px 0;
-            transition: all 0.4s ease;
-        }
-
-        .header.scrolled {
-            padding: 10px 0;
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 50px;
-            transition: all 0.4s ease;
-        }
-
-        .header.scrolled .logo img {
-            height: 40px;
-        }
-
-        .navbar .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .navbar .nav-links li {
-            margin-left: 30px;
-            position: relative;
-        }
-
-        .navbar .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 600;
-            transition: color 0.3s;
-            position: relative;
-            font-size: 1rem;
-        }
-
-        .navbar .nav-links a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            bottom: -5px;
-            left: 0;
-            transition: width 0.3s ease;
-        }
-
-        .navbar .nav-links a:hover:after,
-        .navbar .nav-links a.active:after {
-            width: 100%;
-        }
-
-        .navbar .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .navbar .nav-links a.active {
-            color: var(--primary);
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            font-size: 1.8rem;
-            color: var(--primary);
-        }
-
-        /* Page Banner */
-
-        .page-banner {
-            height: 400px;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                        url('IMA_POP_June_4.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding-top: 80px;
-            position: relative;
-            overflow: hidden;
-        }
-        .page-banner:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 0;
-        }
-
-        .page-banner .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .page-banner h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            animation: fadeInUp 1s ease;
-        }
-
-        .breadcrumb {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            animation: fadeInUp 1s ease 0.2s both;
-        }
-
-        .breadcrumb li {
-            margin: 0 10px;
-            position: relative;
-        }
-
-        .breadcrumb li:after {
-            content: '/';
-            position: absolute;
-            right: -15px;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .breadcrumb li:last-child:after {
-            display: none;
-        }
-
-        .breadcrumb a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .breadcrumb a:hover {
-            color: white;
-        }
-
-        .breadcrumb .current {
-            color: white;
-            font-weight: 600;
-        }
-
-        /* Success Stories Section */
+        /* Success Stories Specific Styles */
         .success-stories {
             position: relative;
             overflow: hidden;
@@ -435,252 +116,8 @@
             line-height: 1.8;
         }
 
-        /* Call to Action */
-
-        
-
-        .cta {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            text-align: center;
-            padding: 80px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .cta p {
-            max-width: 700px;
-            margin: 0 auto 40px;
-            font-size: 1.2rem;
-        }
-
-        .cta .btn {
-            margin: 0 10px;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 80px 0 20px;
-            position: relative;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-
-        .footer-col h3 {
-            font-size: 1.3rem;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-col h3:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 2px;
-            background: var(--secondary);
-        }
-
-        .footer-about p {
-            margin-bottom: 20px;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-
-        .footer-links a:hover {
-            color: white;
-            transform: translateX(5px);
-        }
-
-        .footer-links a:before {
-            content: '\f054';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            margin-right: 8px;
-            font-size: 0.7rem;
-            color: var(--secondary);
-        }
-
-        .footer-contact p {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .footer-contact i {
-            margin-right: 15px;
-            color: var(--secondary);
-            font-size: 1.1rem;
-            margin-top: 3px;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.9rem;
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s;
-            z-index: 999;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background: var(--primary-dark);
-            transform: translateY(-5px);
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .page-banner h1 {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 992px) {
-            section {
-                padding: 80px 0;
-            }
-        }
-
+        /* Responsive adjustments for stories */
         @media (max-width: 768px) {
-            .section-title h2 {
-                font-size: 2rem;
-            }
-
-            .page-banner {
-                height: 350px;
-            }
-
-            .page-banner h1 {
-                font-size: 2rem;
-            }
-
-            .navbar .nav-links {
-                display: none;
-                position: absolute;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                padding: 20px 0;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-                z-index: 999;
-            }
-
-            .navbar .nav-links.active {
-                display: flex;
-            }
-
-            .navbar .nav-links li {
-                margin: 0;
-                text-align: center;
-                padding: 15px 0;
-            }
-
-            .hamburger {
-                display: block;
-            }
-            
             .stories-tabs {
                 flex-direction: column;
                 align-items: center;
@@ -690,21 +127,6 @@
                 width: 100%;
                 text-align: center;
                 margin-bottom: 5px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            section {
-                padding: 60px 0;
-            }
-
-            .page-banner {
-                height: 300px;
-            }
-
-            .btn {
-                padding: 10px 20px;
-                font-size: 0.9rem;
             }
             
             .stories-grid {
@@ -718,7 +140,7 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <img src="https://via.placeholder.com/150x50?text=SSB+Excellence" alt="SSB Excellence Logo">
+                <img src="SSB Excellence Logo.jpg" alt="SSB Excellence Logo">
             </div>
             <nav class="navbar">
                 <ul class="nav-links">
@@ -873,12 +295,12 @@
         <div class="container">
             <h2>Ready to Begin Your SSB Journey?</h2>
             <p>Join hundreds of successful candidates who have realized their dream of serving the nation with our expert guidance and proven training methodology.</p>
-           <div class="cta-btns">
-    <a href="contact.html" class="btn btn-primary">Enroll Now</a>
-    <a href="tel:+919876543210" class="btn btn-outline-white">
-         Call Us
-    </a>
-</div>
+            <div class="cta-btns">
+                <a href="contact.html" class="btn btn-primary">Enroll Now</a>
+                <a href="tel:+919876543210" class="btn btn-outline-white">
+                    <i class="fas fa-phone-alt"></i> Call Us
+                </a>
+            </div>
         </div>
     </section>
 
@@ -887,13 +309,12 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col footer-about">
-                    <img src="https://via.placeholder.com/150x50?text=SSB+Excellence" alt="SSB Excellence Logo" class="footer-logo">
+                    <img src="SSB Excellence Logo.jpg" alt="SSB Excellence Logo" class="footer-logo">
                     <p>SSB Excellence is India's premier SSB coaching institute, dedicated to helping defense aspirants realize their dream of serving the nation as commissioned officers.</p>
                     <div class="social-links">
+                        <a href="https://www.instagram.com/ssb_excellence/?hl=en"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
@@ -922,14 +343,14 @@
                 
                 <div class="footer-col footer-contact">
                     <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Defense Colony, Near SSB Center, Allahabad, UP 211001</p>
-                    <p><i class="fas fa-phone-alt"></i> +91 98765 43210<br> +91 12345 67890</p>
-                    <p><i class="fas fa-envelope"></i> info@ssbexcellence.com<br> admissions@ssbexcellence.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> SSB EXCELLENCE, 2nd Floor, Chinhat Plaza, Shankar Puri, Faizabad Rd, Lucknow, Uttar Pradesh, 226028</p>
+                    <p><i class="fas fa-phone-alt"></i> 9923703155, 7738230065</p>
+                    <p><i class="fas fa-envelope"></i> ssbexcellence25@gmail.com</p>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 SSB Excellence</p>
+                <p>&copy; 2023 SSB Excellence. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -939,54 +360,10 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
+    <script src="main.js"></script>
     <script>
+        // Success stories specific JavaScript
         document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
-            
-            hamburger.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                this.querySelector('i').classList.toggle('fa-times');
-                this.querySelector('i').classList.toggle('fa-bars');
-            });
-
-            // Close mobile menu when clicking a link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    hamburger.querySelector('i').classList.add('fa-bars');
-                    hamburger.querySelector('i').classList.remove('fa-times');
-                });
-            });
-
-            // Sticky header on scroll
-            const header = document.querySelector('.header');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 100) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-
-            // Back to top button
-            const backToTopBtn = document.querySelector('.back-to-top');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 300) {
-                    backToTopBtn.classList.add('active');
-                } else {
-                    backToTopBtn.classList.remove('active');
-                }
-            });
-
-            backToTopBtn.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-
             // Success stories category tabs
             const storyTabs = document.querySelectorAll('.story-tab');
             const storyCards = document.querySelectorAll('.story-card');
@@ -1010,71 +387,6 @@
                     });
                 });
             });
-
-            // Add active class to current page in navigation
-            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-            const navLinksAll = document.querySelectorAll('.navbar .nav-links a');
-            
-            navLinksAll.forEach(link => {
-                const linkPage = link.getAttribute('href');
-                if (currentPage === linkPage) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
-            });
-
-            // Animation on scroll
-            const animateElements = document.querySelectorAll('.story-card');
-            
-            function animateOnScroll() {
-                animateElements.forEach(element => {
-                    const elementPos = element.getBoundingClientRect().top;
-                    const screenPos = window.innerHeight / 1.2;
-                    
-                    if(elementPos < screenPos) {
-                        element.style.opacity = '1';
-                        element.style.transform = 'translateY(0)';
-                    }
-                });
-            }
-            
-            // Set initial state
-            animateElements.forEach(element => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(30px)';
-                element.style.transition = 'all 0.6s ease';
-            });
-            
-            window.addEventListener('scroll', animateOnScroll);
-            animateOnScroll(); // Run once on load
-
-            // Form submission handler
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Get form data
-                    const formData = new FormData(this);
-                    const data = {};
-                    formData.forEach((value, key) => {
-                        data[key] = value;
-                    });
-                    
-                    // Send SMS to phone number
-                    const smsUrl = `sms:7376399246?body=New Contact Form Submission:%0AName: ${data.name}%0AEmail: ${data.email}%0APhone: ${data.phone}%0AMessage: ${data.message}`;
-                    window.location.href = smsUrl;
-                    
-                    // Send email (this would need server-side implementation)
-                    const emailUrl = `mailto:shivang,m04@gmail.com?subject=New Contact Form Submission&body=Name: ${data.name}%0AEmail: ${data.email}%0APhone: ${data.phone}%0AMessage: ${data.message}`;
-                    window.location.href = emailUrl;
-                    
-                    // Show success message
-                    alert('Thank you for your message! We will contact you soon.');
-                    this.reset();
-                });
-            }
         });
     </script>
 </body>
