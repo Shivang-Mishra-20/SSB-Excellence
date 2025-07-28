@@ -59,6 +59,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+
+// Course collapse functionality
+const collapseToggles = document.querySelectorAll('.collapse-toggle');
+if (collapseToggles.length > 0) {
+    collapseToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            const content = this.nextElementSibling;
+            content.classList.toggle('active');
+        });
+    });
+}
+
+
+
     // Add active class to current page in navigation - Common across all pages
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinksAll = document.querySelectorAll('.navbar .nav-links a');

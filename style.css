@@ -539,12 +539,16 @@ section {
     overflow: hidden;
 }
 
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-    overflow-x: auto;
-    padding-bottom: 20px;
+.team-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.centered-row {
+    justify-content: center;
 }
 
 .team-member {
@@ -553,7 +557,8 @@ section {
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     transition: all 0.4s ease;
-    text-align: center;
+    width: calc(33.333% - 20px);
+    min-width: 300px;
     border: 1px solid rgba(0,0,0,0.1);
 }
 
@@ -598,33 +603,26 @@ section {
     font-weight: 500;
 }
 
-
-.btn-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-/* Ensure buttons stay on same line */
-.btn-container .btn {
-    margin: 0;
-    flex: 0 0 auto;
-}
-
 /* Responsive adjustments */
-@media (max-width: 576px) {
-    .btn-container {
-        flex-direction: row;
-        gap: 10px;
+@media (max-width: 992px) {
+    .team-member {
+        width: calc(50% - 20px);
     }
-    .btn-container .btn {
-        padding: 10px 15px;
-        font-size: 0.9rem;
+    
+    .centered-row .team-member {
+        width: calc(50% - 20px);
     }
 }
 
-
+@media (max-width: 768px) {
+    .team-member {
+        width: 100%;
+    }
+    
+    .centered-row .team-member {
+        width: 100%;
+    }
+}
 /* Contact Section */
 .contact-section {
     position: relative;
@@ -753,6 +751,185 @@ section {
     margin-bottom: 20px;
     text-align: center;
 }
+
+
+/* Course Collapse Styles */
+.course-collapse {
+    margin-bottom: 20px;
+    flex: 1;
+    min-height: 0;
+}
+
+.collapse-toggle {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(74, 119, 41, 0.1);
+    border: none;
+    border-radius: 4px;
+    color: var(--primary);
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.collapse-toggle:hover {
+    background: rgba(74, 119, 41, 0.2);
+}
+
+.collapse-toggle i {
+    transition: transform 0.3s ease;
+}
+
+.collapse-toggle.active i {
+    transform: rotate(180deg);
+}
+
+.collapse-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: rgba(74, 119, 41, 0.05);
+    border-radius: 4px;
+}
+
+.collapse-content.active {
+    max-height: 1000px; /* Increased to accommodate all content */
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.course-features {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.course-features li {
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(74, 119, 41, 0.2);
+    position: relative;
+    padding-left: 20px;
+}
+
+.course-features li:last-child {
+    border-bottom: none;
+}
+
+.course-features li:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 15px;
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+}
+
+/* Courses Section */
+.courses {
+    position: relative;
+    overflow: hidden;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+    align-items: flex-start; /* Add this to prevent stretching */
+}
+
+.course-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateY(0);
+    opacity: 0;
+    animation: fadeInUp 0.6s forwards;
+    border: 1px solid rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    height: auto; /* Changed to auto to allow natural height */
+}
+
+.course-card:nth-child(1) { animation-delay: 0.1s; }
+.course-card:nth-child(2) { animation-delay: 0.2s; }
+.course-card:nth-child(3) { animation-delay: 0.3s; }
+.course-card:nth-child(4) { animation-delay: 0.4s; }
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.course-img {
+    height: 200px;
+    overflow: hidden;
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.course-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.course-card:hover .course-img img {
+    transform: scale(1.1);
+}
+
+.course-content {
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* Important for proper flex behavior */
+}
+
+.course-content h3 {
+    margin-bottom: 15px;
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+.course-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.course-duration, .course-mode {
+    display: flex;
+    align-items: center;
+}
+
+.course-duration i, .course-mode i {
+    margin-right: 5px;
+    color: var(--primary);
+}
+
+.course-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.course-actions {
+    margin-top: auto;
+    flex-shrink: 0; /* Prevent button from shrinking */
+}
+
 
 /* Contact Cards */
 .contact-cards {
@@ -1573,4 +1750,3 @@ footer {
 .info-item:nth-child(3) { animation-delay: 0.3s; }
 .info-item:nth-child(4) { animation-delay: 0.4s; }
 .info-item:nth-child(5) { animation-delay: 0.5s; }
-
