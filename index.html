@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
         :root {
             --primary: #4a7729; /* Military green */
@@ -30,15 +31,17 @@
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.7;
-            color: var(--dark);
+            color: white;
             overflow-x: hidden;
-            background-color: #fff;
+            scroll-behavior: smooth;
         }
 
         h1, h2, h3, h4 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             line-height: 1.3;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
         }
 
         .container {
@@ -61,7 +64,6 @@
 
         .section-title h2 {
             font-size: 2.5rem;
-            color: var(--primary);
             margin-bottom: 15px;
             position: relative;
             display: inline-block;
@@ -79,7 +81,6 @@
         }
 
         .section-title p {
-            color: var(--gray);
             max-width: 700px;
             margin: 0 auto;
             font-size: 1.1rem;
@@ -160,7 +161,7 @@
             width: 100%;
             top: 0;
             left: 0;
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(0, 0, 0, 0.7);
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
             z-index: 1000;
             padding: 15px 0;
@@ -169,7 +170,7 @@
 
         .header.scrolled {
             padding: 10px 0;
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(0, 0, 0, 0.8);
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
 
@@ -200,7 +201,7 @@
 
         .navbar .nav-links a {
             text-decoration: none;
-            color: var(--dark);
+            color: white;
             font-weight: 600;
             transition: color 0.3s;
             position: relative;
@@ -212,7 +213,7 @@
             position: absolute;
             width: 0;
             height: 2px;
-            background: var(--primary);
+            background: var(--secondary);
             bottom: -5px;
             left: 0;
             transition: width 0.3s ease;
@@ -224,25 +225,25 @@
         }
 
         .navbar .nav-links a:hover {
-            color: var(--primary);
+            color: var(--secondary);
         }
 
         .navbar .nav-links a.active {
-            color: var(--primary);
+            color: var(--secondary);
         }
 
         .hamburger {
             display: none;
             cursor: pointer;
             font-size: 1.8rem;
-            color: var(--primary);
+            color: white;
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
             min-height: 700px;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                         url('https://shop.ssbcrack.com/cdn/shop/articles/IMA_POP_June_4.jpg?v=1749897347&width=1500');
             background-size: cover;
             background-position: center;
@@ -254,17 +255,6 @@
             padding-top: 80px;
             position: relative;
             overflow: hidden;
-        }
-
-        .hero:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 0;
         }
 
         .hero .container {
@@ -308,7 +298,7 @@
 
         /* Stats Counter */
         .stats {
-            background: var(--primary);
+            background: rgba(0, 0, 0, 0.5);
             color: white;
             padding: 60px 0;
             margin-top: -50px;
@@ -316,44 +306,45 @@
             z-index: 2;
             border-radius: 10px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .stats .container {
-    display: flex;
-    justify-content: space-between; /* Better spacing for 3 items */
-    flex-wrap: wrap;
-}
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
 
-.stat-item {
-    text-align: center;
-    padding: 20px;
-    animation: fadeIn 1s ease;
-    width: 33.33%; /* Equal width for 3 items */
-    box-sizing: border-box;
-}
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 1s ease;
+            width: 33.33%;
+            box-sizing: border-box;
+        }
 
-/* Updated responsive behavior */
-@media (max-width: 992px) {
-    .stat-item {
-        width: 50%; /* 2 items per row */
-    }
-    
-    .stat-item:last-child {
-        width: 100%; /* Last item takes full width */
-    }
-}
+        @media (max-width: 992px) {
+            .stat-item {
+                width: 50%;
+            }
+            
+            .stat-item:last-child {
+                width: 100%;
+            }
+        }
 
-@media (max-width: 576px) {
-    .stat-item {
-        width: 100%; /* Stack vertically */
-    }
-}
+        @media (max-width: 576px) {
+            .stat-item {
+                width: 100%;
+            }
+        }
 
         .stat-item .count {
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 10px;
             font-family: 'Montserrat', sans-serif;
+            color: white;
         }
 
         .stat-item p {
@@ -365,23 +356,13 @@
 
         /* Services Section */
         .services {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                         url('images/1.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             position: relative;
             overflow: hidden;
-            color: white;
-        }
-
-        .services .section-title h2,
-        .services .section-title p {
-            color: white;
-        }
-
-        .services .section-title h2:after {
-            background: var(--secondary);
         }
 
         .services-grid {
@@ -391,7 +372,7 @@
         }
 
         .service-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(0, 0, 0, 0.5);
             padding: 40px 30px;
             border-radius: 8px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
@@ -400,40 +381,18 @@
             position: relative;
             overflow: hidden;
             z-index: 1;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .service-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            z-index: -1;
-            opacity: 0;
-            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-card:hover:before {
-            opacity: 1;
-        }
-
-        .service-card:hover i,
-        .service-card:hover h3,
-        .service-card:hover p {
-            color: white;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.7);
         }
 
         .service-card i {
             font-size: 3.5rem;
-            color: var(--primary);
+            color: var(--secondary);
             margin-bottom: 25px;
             transition: all 0.4s ease;
         }
@@ -445,7 +404,6 @@
         }
 
         .service-card p {
-            color: var(--gray);
             margin-bottom: 20px;
             transition: all 0.4s ease;
         }
@@ -467,38 +425,34 @@
         .about {
             position: relative;
             overflow: hidden;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                         url('images/2.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: white;
         }
 
         .about .container {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
+    display: flex;
+    align-items: flex-start; /* Changed from center to flex-start */
+    gap: 50px;
+}
 
-        .about h2,
-        .about h4,
-        .about p {
-            color: white;
-        }
+.about-content {
+    flex: 1;
+    margin-top: 0; /* Ensure no margin pushes it down */
+}
 
-        .about-content {
-            flex: 1;
-        }
-
-        .about-image {
-            flex: 1;
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border: 5px solid var(--secondary);
-        }
+.about-image {
+    flex: 1;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 5px solid var(--secondary);
+    margin-top: 0; /* Ensure no margin pushes it down */
+    align-self: flex-start; /* Added to align with heading */
+}
 
         .about-image img {
             width: 100%;
@@ -514,7 +468,6 @@
         .about h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
-            color: white;
         }
 
         .about h2 span {
@@ -561,23 +514,13 @@
 
         /* Testimonials Section */
         .testimonials {
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                         url('https://shop.ssbcrack.com/cdn/shop/articles/IMA_POP_June_4.jpg?v=1749897347&width=1500');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: white;
             text-align: center;
             position: relative;
-        }
-
-        .testimonials .section-title h2,
-        .testimonials .section-title p {
-            color: white;
-        }
-
-        .testimonials .section-title h2:after {
-            background: var(--secondary);
         }
 
         .testimonial-slider {
@@ -587,7 +530,7 @@
         }
 
         .testimonial-item {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(10px);
             padding: 40px;
             border-radius: 10px;
@@ -661,12 +604,11 @@
 
         /* Call to Action */
         .cta {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
             text-align: center;
             padding: 80px 0;
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .cta h2 {
@@ -689,10 +631,10 @@
 
         /* Footer */
         footer {
-            background: var(--dark);
-            color: white;
+            background: rgba(0, 0, 0, 0.8);
             padding: 80px 0 20px;
             position: relative;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .footer-content {
@@ -903,7 +845,7 @@
                 top: 80px;
                 left: 0;
                 width: 100%;
-                background: white;
+                background: rgba(0, 0, 0, 0.9);
                 flex-direction: column;
                 padding: 20px 0;
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -984,7 +926,7 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <img src="images/SSB Excellence Logo.jpg" alt="SSB EXCELLENCE Logo">
+                <img src="images/SSB Excellence Logo_new.jpg" alt="SSB EXCELLENCE Logo">
             </div>
             <nav class="navbar">
                 <ul class="nav-links">
@@ -1007,7 +949,7 @@
             <p>SSB EXCELLENCE provides premier coaching for defence aspirants. Every candidate is mentored to crack the SSB exam and interview with confidence. Our proven methodology has helped candidates realize their dream of serving the nation.</p>
             <div class="hero-btns">
                 <a href="https://forms.gle/x2bXzyNAu51spPes5" class="btn btn-primary" target="_blank">Enroll Now</a>
-                <a href="courses.html" class="btn btn-outline">Our Programs</a>
+                <a href="courses.html" class="btn btn-outline-white">Our Programs</a>
             </div>
         </div>
     </section>
@@ -1042,37 +984,37 @@
                     <i class="fas fa-user-shield"></i>
                     <h3>Screening Batch</h3>
                     <p>Master the art of first impressions with our intensive screening preparation covering OIR and PPDT techniques .With tips and tricks to crack screening you are sure to succeed.</p>
-                    <a href="courses.html" class="btn btn-outline">Learn More</a>
+                    <a href="courses.html" class="btn btn-outline-white">Learn More</a>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-brain"></i>
                     <h3>Full Psych Batch</h3>
                     <p>Comprehensive psychological test training including TAT, WAT, SRT, SD with expert evaluation and feedback.</p>
-                    <a href="courses.html" class="btn btn-outline">Learn More</a>
+                    <a href="courses.html" class="btn btn-outline-white">Learn More</a>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-tasks"></i>
                     <h3>GTO Modules</h3>
                     <p>Practical training for Group Testing Officers tasks including GD, GPE, PGT, HGT, CT, IO, GOR, Lecturette and FGT.</p>
-                    <a href="courses.html" class="btn btn-outline">Learn More</a>
+                    <a href="courses.html" class="btn btn-outline-white">Learn More</a>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-user-tie"></i>
                     <h3>Personal Interview</h3>
                     <p>Master the art of Personal Interview with a structured approach covering all possible questions . Witness countless Mock interviews of other students and practise with recently recommended students to crack the interview.</p>
-                    <a href="courses.html" class="btn btn-outline">Learn More</a>
+                    <a href="courses.html" class="btn btn-outline-white">Learn More</a>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-medal"></i>
                     <h3>Final Preparation</h3>
                     <p>Comprehensive mock SSB interviews with detailed feedback from experienced assessors.</p>
-                    <a href="courses.html" class="btn btn-outline">Learn More</a>
+                    <a href="courses.html" class="btn btn-outline-white">Learn More</a>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-graduation-cap"></i>
                     <h3>Online and Offline Coaching</h3>
                     <p>Choose from our range of courses from online batches to offline batches and receive detailed personalised feedback.</p>
-                    <a href="courses.html" class="btn btn-outline">Learn More</a>
+                    <a href="courses.html" class="btn btn-outline-white">Learn More</a>
                 </div>
             </div>
         </div>
@@ -1124,7 +1066,7 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+        <!-- Testimonials Section -->
     <section class="testimonials">
         <div class="container">
             <div class="section-title">
@@ -1136,78 +1078,75 @@
                 <div class="testimonial-item">
                     <div class="testimonial-grid">
                         <div class="testimonial-image">
-                        <img src="images/Anish_Singh1.jpg" alt="Anish Singh"></div>
-                    <div class="testimonial-content-wrapper">
-                        <div class="testimonial-content">
-                            SSB EXCELLENCE transformed my approach completely. The psychological test training was particularly helpful. I cleared my SSB in the first attempt and am now a proud cadet at IMA. The personalized feedback made all the difference!
+                            <img src="images/Anish_Singh1.jpg" alt="Anish Singh" width="200" height="200">
                         </div>
-                        <div class="testimonial-author">
-                            <div class="author-info">
-                                <h4>Anish Singh</h4>
-                                <p>OTA, AFCAT & IMA</p>
+                        <div class="testimonial-content-wrapper">
+                            <div class="testimonial-content">
+                                SSB EXCELLENCE transformed my approach completely. The psychological test training was particularly helpful. I cleared my SSB in the first attempt and am now a proud cadet at IMA. The personalized feedback made all the difference!
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Anish Singh</h4>
+                                    <p>OTA, AFCAT & IMA</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
                 
-                <div class="testimonial-slider">
                 <div class="testimonial-item">
                     <div class="testimonial-grid">
                         <div class="testimonial-image">
-                        <img src="images/Naina_Saxena1.jpg" alt="Naina Saxena"></div>
-                    <div class="testimonial-content-wrapper">
-                        <div class="testimonial-content">
-                           The GTO training module was exceptional. The practical exercises and detailed feedback helped me understand exactly what assessors look for. I improved dramatically in group tasks and command situations, which was crucial for my selection.
-                    </div>
-
+                            <img src="images/Naina_Saxena1.jpg" alt="Naina Saxena" width="200" height="200">
                         </div>
-                        <div class="testimonial-author">
-                            <div class="author-info">
-                                <h4>Naina Saxena</h4>
-                                <p>AFCAT, OTA & Navy Tech</p>
+                        <div class="testimonial-content-wrapper">
+                            <div class="testimonial-content">
+                                The GTO training module was exceptional. The practical exercises and detailed feedback helped me understand exactly what assessors look for. I improved dramatically in group tasks and command situations, which was crucial for my selection.
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Naina Saxena</h4>
+                                    <p>AFCAT, OTA & Navy Tech</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
                 
-                <div class="testimonial-slider">
                 <div class="testimonial-item">
                     <div class="testimonial-grid">
                         <div class="testimonial-image">
-                        <img src="images/Avikesh_Chhillar1.jpg" alt="Avikesh Chhillar"></div>
-                    <div class="testimonial-content-wrapper">
-                        <div class="testimonial-content">
-                           After two unsuccessful attempts, I joined SSB EXCELLENCE. Their approach to personality development and interview techniques was game-changing. The mock interviews were so realistic that the actual SSB felt familiar. Highly recommend!
-                    </div>
-
+                            <img src="images/Avikesh_Chhillar1.jpg" alt="Avikesh Chhillar" width="200" height="200">
                         </div>
-                        <div class="testimonial-author">
-                            <div class="author-info">
-                                <h4>Avikesh Chhillar</h4>
-                                <p>OTA</p>
+                        <div class="testimonial-content-wrapper">
+                            <div class="testimonial-content">
+                                After two unsuccessful attempts, I joined SSB EXCELLENCE. Their approach to personality development and interview techniques was game-changing. The mock interviews were so realistic that the actual SSB felt familiar. Highly recommend!
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Avikesh Chhillar</h4>
+                                    <p>OTA</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-               <div class="testimonial-slider">
                 <div class="testimonial-item">
                     <div class="testimonial-grid">
                         <div class="testimonial-image">
-                        <img src="images/Aanchal_Sharma1.jpg" alt="Aanchal Sharma"></div>
-                    <div class="testimonial-content-wrapper">
-                        <div class="testimonial-content">
-                        The training methods of Colonel VK Sir and SSB Excellence team shall definitely assist Defence Aspirants in enhancing their OLQs in a very structured and appreciable manner. Each assignment is checked thoroughly. <p>An honest and genuine destination for people seeking a deep insight onto their self and spirit. PS most of the TAT stories and WAT words that I actually got in SSB were what sir had made us already practice earlier</p> 
-                    </div>
-
+                            <img src="images/Aanchal_Sharma1.jpg" alt="Aanchal Sharma" width="200" height="200">
                         </div>
-                        <div class="testimonial-author">
-                            <div class="author-info">
-                                <h4>Aanchal Sharma</h4>
-                                <p>AFCAT</p>
+                        <div class="testimonial-content-wrapper">
+                            <div class="testimonial-content">
+                                The training methods of Colonel VK Sir and SSB Excellence team shall definitely assist Defence Aspirants in enhancing their OLQs in a very structured and appreciable manner. Each assignment is checked thoroughly.
+                                <p>An honest and genuine destination for people seeking a deep insight onto their self and spirit. PS most of the TAT stories and WAT words that I actually got in SSB were what sir had made us already practice earlier</p> 
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Aanchal Sharma</h4>
+                                    <p>AFCAT</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1225,9 +1164,9 @@
         <div class="container">
             <h2>Ready to Begin Your SSB Journey?</h2>
             <p>Join hundreds of successful candidates who have realized their dream of serving the nation with our expert guidance and proven training methodology.</p>
-            <div class="cta-btns">
+            <div class="btn-container">
                 <a href="https://forms.gle/x2bXzyNAu51spPes5" class="btn btn-primary" target="_blank">Enroll Now</a>
-                <a href="tel:+919923703155" class="btn btn-outline-white">Call Us</a>
+                <a href="tel:+917738230065" class="btn btn-outline-white">Call Us</a>
             </div>
         </div>
     </section>
@@ -1440,5 +1379,4 @@
         });
     </script>
 </body>
-
 </html>
