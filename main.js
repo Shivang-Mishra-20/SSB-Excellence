@@ -157,7 +157,7 @@ Subject: ${data.subject}
 Message: ${data.message}`;
             
             // Send SMS
-            const smsUrl = `sms:9923703155?body=${encodeURIComponent(messageText)}`;
+            const smsUrl = `sms:7738230065?body=${encodeURIComponent(messageText)}`;
             window.open(smsUrl, '_blank');
             
             // Send email
