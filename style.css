@@ -1,8 +1,8 @@
 :root {
-    --primary: #4a7729; 
+    --primary: #4a7729;
     --primary-dark: #3a5f20;
-    --secondary: #d4af37; 
-    --accent: #8b0000; 
+    --secondary: #d4af37;
+    --accent: #8b0000;
     --light: #f8f9fa;
     --dark: #212529;
     --gray: #6c757d;
@@ -263,7 +263,7 @@ section {
 
 .page-banner {
     height: 400px;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
                 url('images/IMA_POP_June_4.jpg');
     background-size: cover;
     background-position: center;
@@ -608,7 +608,7 @@ section {
     .team-member {
         width: calc(50% - 20px);
     }
-    
+
     .centered-row .team-member {
         width: calc(50% - 20px);
     }
@@ -618,7 +618,7 @@ section {
     .team-member {
         width: 100%;
     }
-    
+
     .centered-row .team-member {
         width: 100%;
     }
@@ -800,7 +800,7 @@ section {
 }
 
 .collapse-content.active {
-    max-height: 1000px; 
+    max-height: 1000px;
     padding: 15px;
     overflow-y: auto;
 }
@@ -843,7 +843,7 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     gap: 30px;
-    align-items: flex-start; 
+    align-items: flex-start;
 }
 
 .course-card {
@@ -858,7 +858,7 @@ section {
     border: 1px solid rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
-    height: auto; 
+    height: auto;
 }
 
 .course-card:nth-child(1) { animation-delay: 0.1s; }
@@ -874,7 +874,7 @@ section {
 .course-img {
     height: 200px;
     overflow: hidden;
-    flex-shrink: 0; 
+    flex-shrink: 0;
 }
 
 .course-img img {
@@ -893,7 +893,7 @@ section {
     flex: 1;
     display: flex;
     flex-direction: column;
-    min-height: 0; 
+    min-height: 0;
 }
 
 .course-content h3 {
@@ -929,7 +929,7 @@ section {
 
 .course-actions {
     margin-top: auto;
-    flex-shrink: 0; 
+    flex-shrink: 0;
 }
 
 
@@ -1543,7 +1543,7 @@ footer {
     .testimonial-grid {
         flex-direction: column;
     }
-    
+
     .testimonial-image {
         flex: 0 0 auto;
         width: 150px;
@@ -1628,7 +1628,7 @@ footer {
     .about-header {
         flex-direction: column;
     }
-    
+
     .about-image {
         width: 100%;
         height: 400px;
@@ -1656,11 +1656,13 @@ footer {
     .page-banner {
         height: 350px;
         background-attachment: scroll;
-        padding-top: 120px; 
+        padding-top: 120px;
     }
 
     .page-banner h1 {
         font-size: 2rem;
+        margin-top: 0;
+        padding-top: 80px;
     }
 
     .navbar .nav-links {
@@ -1680,12 +1682,6 @@ footer {
         display: flex;
     }
 
-    .navbar .nav-links li {
-        margin: 0;
-        text-align: center;
-        padding: 15px 0;
-    }
-
     .hamburger {
         display: block;
     }
@@ -1694,7 +1690,7 @@ footer {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .cta .btn {
         width: 100%;
         max-width: 250px;
@@ -1708,11 +1704,11 @@ footer {
     .courses-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .features-container {
         flex-direction: column;
     }
-    
+
     .details-tabs {
         flex-wrap: wrap;
     }
@@ -1729,7 +1725,7 @@ footer {
 
     .page-banner {
         height: 300px;
-        padding-top: 100px; 
+        padding-top: 100px;
     }
 
     .page-banner h1 {
