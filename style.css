@@ -604,6 +604,50 @@ section {
     font-weight: 500;
 }
 
+/* Add these styles to your CSS */
+.container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 20px;
+}
+
+.center-logo {
+    display: flex;
+    justify-content: center;
+}
+
+.center-logo img {
+    height: 60px;
+    width: auto;
+    transition: all 0.4s ease;
+}
+
+.header.scrolled .center-logo img {
+    height: 50px;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 992px) {
+    .container {
+        grid-template-columns: auto 1fr;
+    }
+    .center-logo {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr auto;
+    }
+    .logo img, 
+    .header.scrolled .logo img {
+        height: 50px;
+    }
+}
+
+
 /* Responsive adjustments */
 @media (max-width: 992px) {
     .team-member {
@@ -624,6 +668,8 @@ section {
         width: 100%;
     }
 }
+
+
 /* Contact Section */
 .contact-section {
     position: relative;
