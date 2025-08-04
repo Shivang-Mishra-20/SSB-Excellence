@@ -1,9 +1,9 @@
-/* Global Styles */
+
 :root {
-    --primary: #4a7729; /* Military green */
+    --primary: #4a7729; 
     --primary-dark: #3a5f20;
-    --secondary: #d4af37; /* Gold */
-    --accent: #8b0000; /* Dark red */
+    --secondary: #d4af37; 
+    --accent: #8b0000; 
     --light: #f8f9fa;
     --dark: #212529;
     --gray: #6c757d;
@@ -176,7 +176,7 @@ section {
     margin-top: 20px;
 }
 
-/* Header Styles */
+
 .header {
     position: fixed;
     width: 100%;
@@ -260,7 +260,7 @@ section {
     color: var(--primary);
 }
 
-/* Page Banner */
+
 
 .page-banner {
     height: 400px;
@@ -339,7 +339,7 @@ section {
     font-weight: 600;
 }
 
-/* About Section */
+
 .about-section {
     position: relative;
     overflow: hidden;
@@ -455,7 +455,7 @@ section {
     color: var(--primary);
 }
 
-/* Mission Vision */
+
 .mission-vision {
     background: var(--light);
     position: relative;
@@ -534,7 +534,7 @@ section {
     color: var(--primary);
 }
 
-/* Team Section */
+
 .team {
     position: relative;
     overflow: hidden;
@@ -604,7 +604,7 @@ section {
     font-weight: 500;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 992px) {
     .team-member {
         width: calc(50% - 20px);
@@ -626,7 +626,7 @@ section {
 }
 
 
-/* Contact Section */
+
 .contact-section {
     position: relative;
     overflow: hidden;
@@ -756,7 +756,7 @@ section {
 }
 
 
-/* Course Collapse Styles */
+
 .course-collapse {
     margin-bottom: 20px;
     flex: 1;
@@ -801,7 +801,7 @@ section {
 }
 
 .collapse-content.active {
-    max-height: 1000px; /* Increased to accommodate all content */
+    max-height: 1000px; 
     padding: 15px;
     overflow-y: auto;
 }
@@ -834,7 +834,7 @@ section {
     border-radius: 50%;
 }
 
-/* Courses Section */
+
 .courses {
     position: relative;
     overflow: hidden;
@@ -844,7 +844,7 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     gap: 30px;
-    align-items: flex-start; /* Add this to prevent stretching */
+    align-items: flex-start; 
 }
 
 .course-card {
@@ -859,7 +859,7 @@ section {
     border: 1px solid rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
-    height: auto; /* Changed to auto to allow natural height */
+    height: auto; 
 }
 
 .course-card:nth-child(1) { animation-delay: 0.1s; }
@@ -875,7 +875,7 @@ section {
 .course-img {
     height: 200px;
     overflow: hidden;
-    flex-shrink: 0; /* Prevent image from shrinking */
+    flex-shrink: 0; 
 }
 
 .course-img img {
@@ -894,7 +894,7 @@ section {
     flex: 1;
     display: flex;
     flex-direction: column;
-    min-height: 0; /* Important for proper flex behavior */
+    min-height: 0; 
 }
 
 .course-content h3 {
@@ -930,11 +930,11 @@ section {
 
 .course-actions {
     margin-top: auto;
-    flex-shrink: 0; /* Prevent button from shrinking */
+    flex-shrink: 0; 
 }
 
 
-/* Contact Cards */
+
 .contact-cards {
     background: var(--light);
     position: relative;
@@ -1012,7 +1012,7 @@ section {
     color: var(--primary-dark);
 }
 
-/* Map Section */
+
 .map-section {
     padding: 0;
     height: 500px;
@@ -1029,7 +1029,7 @@ section {
     border: none;
 }
 
-/* Courses Section */
+
 .courses {
     position: relative;
     overflow: hidden;
@@ -1157,7 +1157,7 @@ section {
     margin-top: auto;
 }
 
-/* Course Details */
+
 .course-details {
     position: relative;
     overflow: hidden;
@@ -1225,7 +1225,7 @@ section {
     display: block;
 }
 
-/* Course Info Sidebar */
+
 .sidebar-card {
     background: white;
     border-radius: 8px;
@@ -1252,7 +1252,7 @@ section {
     color: var(--dark);
 }
 
-/* Call to Action */
+
 .cta {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: white;
@@ -1274,7 +1274,7 @@ section {
     font-size: 1.2rem;
 }
 
-/* Footer */
+
 footer {
     background: var(--dark);
     color: white;
@@ -1447,7 +1447,7 @@ footer {
     animation: fadeInUp 1s ease 0.6s both;
 }
 
-/* Service card hover effects */
+
 .service-card:before {
     content: '';
     position: absolute;
@@ -1484,12 +1484,12 @@ footer {
     transform: translateY(0);
 }
 
-/* Stats counter animation */
+
 .stat-item {
     animation: fadeIn 1s ease;
 }
 
-/* Testimonial styling */
+
 .testimonial-item {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -1539,7 +1539,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
     .testimonial-grid {
         flex-direction: column;
@@ -1554,7 +1554,7 @@ footer {
 }
 
 
-/* Animations */
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -1577,7 +1577,7 @@ footer {
     100% { transform: scale(1); }
 }
 
-/* Animations */
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -1600,7 +1600,7 @@ footer {
     100% { transform: scale(1); }
 }
 
-/* Responsive Design */
+
 @media (max-width: 1200px) {
     .page-banner h1 {
         font-size: 2.5rem;
@@ -1749,7 +1749,7 @@ footer {
     }
 }
 
-/* Animation timing adjustments */
+
 .info-item:nth-child(1) { animation-delay: 0.1s; }
 .info-item:nth-child(2) { animation-delay: 0.2s; }
 .info-item:nth-child(3) { animation-delay: 0.3s; }
