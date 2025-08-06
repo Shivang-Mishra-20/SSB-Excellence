@@ -116,40 +116,131 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    const contactForm = document.getElementById('contactForm');
-    const successMessage = document.querySelector('.success-message');
-    
-    if (contactForm && successMessage) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            const data = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
-            
-            const messageText = `New Contact Form Submission:
+const contactForm = document.getElementById('contactForm');
+const successMessage = document.querySelector('.success-message');
+
+if (contactForm && successMessage) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+        
+        const subject = 'New Contact Form Submission';
+        const messageText = `New Contact Form Submission:
 Name: ${data.name}
 Email: ${data.email}
 Phone: ${data.phone}
 Subject: ${data.subject}
 Message: ${data.message}`;
+
+        // Primary method - works on most devices
+        const emailUrl = `mailto:shivang.m04@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(messageText)}`;
+        
+        // Create a hidden anchor tag to handle the mailto link
+        const mailtoLink = document.createElement('a');
+        mailtoLink.href = emailUrl;
+        mailtoLink.style.display = 'none';
+        document.body.appendChild(mailtoLink);
+        
+        // Track if the email client was opened
+        let emailClientOpened = false;
+        const emailOpenTimeout = setTimeout(() => {
+            if (!emailClientOpened) {
+                handleEmailFallback(subject, messageText);
+            }
+        }, 500); // Wait 500ms before assuming failure
+        
+        // Attempt to open email client
+        mailtoLink.click();
+        
+        // This will only run if the email client opened successfully
+        window.addEventListener('blur', function onBlur() {
+            emailClientOpened = true;
+            clearTimeout(emailOpenTimeout);
+            window.removeEventListener('blur', onBlur);
             
-            const smsUrl = `sms:7738230065?body=${encodeURIComponent(messageText)}`;
-            window.open(smsUrl, '_blank');
+            // Show success message when we're confident email client opened
+            showSuccessMessage();
             
-            const emailUrl = `mailto:ssbexcellence25@gmail.com?subject=New Contact Form Submission&body=${encodeURIComponent(messageText)}`;
-            window.open(emailUrl, '_blank');
-            
-            successMessage.style.display = 'block';
-            contactForm.reset();
-            
+            // Clean up
             setTimeout(() => {
-                successMessage.style.display = 'none';
-            }, 5000);
+                document.body.removeChild(mailtoLink);
+            }, 1000);
         });
+
+        // Reset form immediately for better UX
+        contactForm.reset();
+    });
+}
+
+function handleEmailFallback(subject, messageText) {
+    // Fallback method 1: Show email details with copy option
+    const emailDetails = `To: shivang.m04@gmail.com\nSubject: ${subject}\n\n${messageText}`;
+    
+    // Try to copy to clipboard
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(emailDetails).then(() => {
+            const userConfirmed = confirm('Email details copied to clipboard. Paste them in your email client.\n\nClick OK to confirm you sent the email.');
+            if (userConfirmed) {
+                showSuccessMessage();
+            }
+        }).catch(() => {
+            showManualEmailDialog(emailDetails);
+        });
+    } else {
+        showManualEmailDialog(emailDetails);
     }
-});
+}
+
+function showManualEmailDialog(emailDetails) {
+    // Fallback method 2: Show complete email details in a dialog
+    const userConfirmed = confirm(`Could not open email automatically. Here are your email details:\n\n${emailDetails}\n\nClick OK after you've sent the email manually.`);
+    
+    if (userConfirmed) {
+        showSuccessMessage();
+    }
+}
+
+function showSuccessMessage() {
+    const successMessage = document.querySelector('.success-message');
+    if (successMessage) {
+        successMessage.textContent = 'Message sent successfully!';
+        successMessage.style.display = 'block';
+        
+        setTimeout(() => {
+            successMessage.style.display = 'none';
+        }, 5000);
+    }
+}
+
+function handleEmailFallback(subject, messageText) {
+    // Fallback method 1: Show email details with copy option
+    const emailDetails = `To: shivang.m04@gmail.com\nSubject: ${subject}\n\n${messageText}`;
+    
+    // Try to copy to clipboard
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(emailDetails).then(() => {
+            alert('Email details copied to clipboard. Please paste them in your email client.');
+        }).catch(() => {
+            showEmailFallbackDialog(emailDetails);
+        });
+    } else {
+        showEmailFallbackDialog(emailDetails);
+    }
+}
+
+function showEmailFallbackDialog(emailDetails) {
+    // Fallback method 2: Show complete email details in a dialog
+    const shouldProceed = confirm(`Could not open email client automatically. Here are your email details:\n\n${emailDetails}\n\nClick OK to try opening your email client, or Cancel to manually copy these details.`);
+    
+    if (shouldProceed) {
+        // Final attempt with simple mailto
+        window.location.href = `mailto:shivang.m04@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(messageText)}`;
+    }
+}
 
 function debounce(func, wait = 20, immediate = true) {
     let timeout;
